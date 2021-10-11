@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components'
+import Header from '../header/Header'
 
 const MOCK_DATA = [
   {
@@ -59,11 +60,7 @@ const MOCK_DATA = [
 function App() {
   return (
     <div>
-      <h1>Allaround Family</h1>
-      <p>
-        Hey kids and parents, this app is for you. Touch a card to toggle
-        details.
-      </p>
+      <Header />
     </div>
   )
 }

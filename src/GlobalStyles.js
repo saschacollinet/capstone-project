@@ -2,14 +2,13 @@ import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
 *, *::before, *::after {
-  box-sizing: border-box;
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
 }
 
-body {
-  display: grid;
-  place-items: center;
+html {
+  box-sizing: border-box;
 }
 `
 
