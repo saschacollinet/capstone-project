@@ -46,8 +46,8 @@ const Footer = styled.div`
   width: 100%;
   bottom: 0;
   position: absolute;
-  background-color: #2b3636;
-  color: #bac1c7;
+  background: none;
+  color: whitesmoke;
   padding: 39px 0 42px;
 `
 
@@ -62,7 +62,7 @@ const ProfilesList = styled.ul`
 `
 
 const ProfilesAnchor = styled.a`
-  color: #bac1c7;
+  color: whitesmoke;
   text-decoration: none;
   &:hover,
   &:active,

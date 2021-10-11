@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
-function Header() {
+function RenderHeader() {
   return (
-    <StyledHeader>
+    <Header>
       <h1>Allaround Family</h1>
-    </StyledHeader>
+    </Header>
   )
 }
 
-const StyledHeader = styled.div`
+const Header = styled.div`
   width: 100%;
   padding: 20px 0px;
   background: none;
@@ -18,6 +18,7 @@ const StyledHeader = styled.div`
   z-index: 2;
   position: fixed;
   top: 0;
+  color: whitesmoke;
 `
 
-export default Header
+export default RenderHeader
