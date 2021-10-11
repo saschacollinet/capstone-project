@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import styled from 'styled-components'
 import Header from '../header/Header'
+import Footer from '../footer/Footer'
 
 const MOCK_DATA = [
   {
@@ -61,6 +61,7 @@ function App() {
   return (
     <div>
       <Header />
+      <Footer />
     </div>
   )
 }
