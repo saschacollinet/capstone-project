@@ -17,11 +17,12 @@ function RenderHome() {
 }
 
 const Home = styled.section`
-  width: 300px;
+  min-width: 300px;
   margin-top: 100px;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 25px;
+  padding: 0px 10px;
 `
 
 const HeadlineTwo = styled.h2`
