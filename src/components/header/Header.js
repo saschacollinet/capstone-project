@@ -11,14 +11,10 @@ function RenderHeader() {
 const Header = styled.div`
   width: 100%;
   padding: 20px 0px;
-  background: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   z-index: 2;
   position: fixed;
   top: 0;
-  color: whitesmoke;
 `
 
 export default RenderHeader

@@ -43,12 +43,8 @@ function RenderFooter() {
 
 const Footer = styled.div`
   text-align: center;
-  width: 100%;
-  bottom: 0;
   position: absolute;
-  background: none;
-  color: whitesmoke;
-  padding: 39px 0 42px;
+  bottom: 20px;
 `
 
 const Copywright = styled.div`
@@ -62,15 +58,8 @@ const ProfilesList = styled.ul`
 `
 
 const ProfilesAnchor = styled.a`
-  color: whitesmoke;
+  color: black;
   text-decoration: none;
-  &:hover,
-  &:active,
-  &:focus,
-  &:visited,
-  &:link {
-    text-decoration: none;
-  }
 `
 
 export default RenderFooter

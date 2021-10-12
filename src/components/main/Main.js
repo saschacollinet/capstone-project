@@ -9,14 +9,12 @@ const Main = styled.main`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
   background-image: url(${mainBackground});
   background-size: cover;
-  background-color: darkgreen;
-  background-blend-mode: overlay;
+  background-attachment: fixed;
 `
 
 export default RenderMain

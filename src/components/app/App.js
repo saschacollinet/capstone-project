@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from '../header/Header'
 import Main from '../main/Main'
+import Home from '../home/Home'
 import Footer from '../footer/Footer'
 
 const MOCK_DATA = [
@@ -62,8 +63,10 @@ function App() {
   return (
     <div>
       <Header />
-      <Main />
-      <Footer />
+      <Main>
+        <Home />
+        <Footer />
+      </Main>
     </div>
   )
 }
