@@ -1,20 +1,17 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import mainBackground from '../../assets/images/mainBackground.jpg'
 
-function RenderMain({ children }) {
-  return <Main>{children}</Main>
+export default function Main({ children }) {
+  return <Wrapper>{children}</Wrapper>
 }
 
-const Main = styled.main`
+const Wrapper = styled.main`
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
   background-image: url(${mainBackground});
   background-size: cover;
   background-attachment: fixed;
 `
-
-export default RenderMain

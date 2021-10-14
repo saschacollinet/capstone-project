@@ -1,14 +1,14 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
-function RenderFooter() {
+export default function Footer() {
   return (
-    <Footer>
-      <Copywright>
+    <Wrapper>
+      <Copyright>
         <p>
           © Sascha Collinet | Allaround Family - Your Family Friendly Activity
           Finder 2021
         </p>
-      </Copywright>
+      </Copyright>
       <Profiles>
         <ProfilesList>
           <li>
@@ -37,21 +37,29 @@ function RenderFooter() {
           </li>
         </ProfilesList>
       </Profiles>
-    </Footer>
+    </Wrapper>
   )
 }
 
-const Footer = styled.div`
+const Wrapper = styled.footer`
+  width: 100%;
+  font-size: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.7);
   text-align: center;
   position: absolute;
-  bottom: 20px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 `
 
-const Copywright = styled.div`
-  margin-bottom: 20px;
+const Copyright = styled.div`
+  margin-top: 0.6rem;
 `
 
-const Profiles = styled.div``
+const Profiles = styled.div`
+  margin-bottom: 0.6rem;
+`
 
 const ProfilesList = styled.ul`
   list-style: none;
@@ -59,7 +67,4 @@ const ProfilesList = styled.ul`
 
 const ProfilesAnchor = styled.a`
   color: black;
-  text-decoration: none;
 `
-
-export default RenderFooter

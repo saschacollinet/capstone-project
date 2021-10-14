@@ -22,22 +22,22 @@ describe('Footer', () => {
   it('displays the text', () => {
     render(<Footer />)
 
-    const paragraph1 = screen.getByText(
+    const copyright = screen.getByText(
       '© Sascha Collinet | Allaround Family - Your Family Friendly Activity Finder 2021'
     )
 
-    expect(paragraph1).toBeInTheDocument()
+    expect(copyright).toBeInTheDocument()
 
-    const anchor1 = screen.getByText('GitHub')
+    const gitHubLink = screen.getByText('GitHub')
 
-    expect(anchor1).toBeInTheDocument()
+    expect(gitHubLink).toBeInTheDocument()
 
-    const anchor2 = screen.getByText('LinkedIn')
+    const linkedInLink = screen.getByText('LinkedIn')
 
-    expect(anchor2).toBeInTheDocument()
+    expect(linkedInLink).toBeInTheDocument()
 
-    const anchor3 = screen.getByText('Xing')
+    const xingLink = screen.getByText('Xing')
 
-    expect(anchor3).toBeInTheDocument()
+    expect(xingLink).toBeInTheDocument()
   })
 })

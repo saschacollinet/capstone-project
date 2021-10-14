@@ -1,41 +1,24 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
-function RenderHome() {
+export default function Home() {
   return (
-    <Home>
-      <HeadlineTwo>Welcome kids and parents!</HeadlineTwo>
-      <HeadlineThree>This app is for you!</HeadlineThree>
-      <Paragraph>
-        Add and find family friendly activities all around you.
-      </Paragraph>
-      <Paragraph>Display them as a list or on a map.</Paragraph>
-      <Paragraph>
-        Press on a card to show full details of the activity.
-      </Paragraph>
-    </Home>
+    <Wrapper>
+      <h2>Welcome kids and parents!</h2>
+      <h3>This app is for you!</h3>
+      <p>Add and find family friendly activities all around you.</p>
+      <p>Display them as a list or on a map.</p>
+      <p>Press on a card to show full details of the activity.</p>
+    </Wrapper>
   )
 }
 
-const Home = styled.section`
-  min-width: 300px;
-  margin-top: 100px;
+const Wrapper = styled.section`
   text-align: center;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 25px;
-  padding: 0px 10px;
+  padding: 1.3rem 0.6rem;
+  margin: 6rem 0.6rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
 `
-
-const HeadlineTwo = styled.h2`
-  margin-top: 20px;
-  margin-bottom: 20px;
-`
-
-const HeadlineThree = styled.h3`
-  margin-bottom: 20px;
-`
-
-const Paragraph = styled.p`
-  margin-bottom: 20px;
-`
-
-export default RenderHome

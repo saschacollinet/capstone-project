@@ -14,28 +14,30 @@ describe('Home', () => {
   it('displays the text', () => {
     render(<Home />)
 
-    const heading1 = screen.getByText('Welcome kids and parents!')
+    const welcomeHeading = screen.getByText('Welcome kids and parents!')
 
-    expect(heading1).toBeInTheDocument()
+    expect(welcomeHeading).toBeInTheDocument()
 
-    const heading2 = screen.getByText('This app is for you!')
+    const thisAppHeading = screen.getByText('This app is for you!')
 
-    expect(heading2).toBeInTheDocument()
+    expect(thisAppHeading).toBeInTheDocument()
 
-    const paragraph1 = screen.getByText(
+    const addAndFindParagraph = screen.getByText(
       'Add and find family friendly activities all around you.'
     )
 
-    expect(paragraph1).toBeInTheDocument()
+    expect(addAndFindParagraph).toBeInTheDocument()
 
-    const paragraph2 = screen.getByText('Display them as a list or on a map.')
+    const displayThemParagraph = screen.getByText(
+      'Display them as a list or on a map.'
+    )
 
-    expect(paragraph2).toBeInTheDocument()
+    expect(displayThemParagraph).toBeInTheDocument()
 
-    const paragraph3 = screen.getByText(
+    const pressParagraph = screen.getByText(
       'Press on a card to show full details of the activity.'
     )
 
-    expect(paragraph3).toBeInTheDocument()
+    expect(pressParagraph).toBeInTheDocument()
   })
 })

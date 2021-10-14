@@ -1,20 +1,19 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
-function RenderHeader() {
+export default function Header() {
   return (
-    <Header>
+    <Wrapper>
       <h1>Allaround Family</h1>
-    </Header>
+    </Wrapper>
   )
 }
 
-const Header = styled.div`
+const Wrapper = styled.header`
+  background-color: rgba(255, 255, 255, 0.7);
   width: 100%;
-  padding: 20px 0px;
+  padding: 1.3rem 0;
   text-align: center;
   z-index: 2;
   position: fixed;
   top: 0;
 `
-
-export default RenderHeader
