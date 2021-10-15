@@ -2,8 +2,9 @@ import styled, { css } from 'styled-components/macro'
 import { useState } from 'react'
 import mainBackground from '../../assets/images/mainBackground.jpg'
 
-export default function FlipCard() {
+export default function FlipCard(props) {
   const [isCardFlipped, setIsCardFlipped] = useState(false)
+  const isFreeOfCharge = props.freeOfCharge
   const handleFlipCardClick = () => {
     setIsCardFlipped(!isCardFlipped)
   }
@@ -11,39 +12,46 @@ export default function FlipCard() {
     <Card onClick={handleFlipCardClick}>
       <CardContent isCardFlipped={isCardFlipped}>
         <CardFront>
-          <CardTitle>Aquazoo Löbbecke Museum</CardTitle>
-          <CardSubtitle>Düsseldorf</CardSubtitle>
+          <CardTitle>{props.name}</CardTitle>
+          <CardSubtitle>{props.city}</CardSubtitle>
         </CardFront>
         <CardBack>
           <CardBody>
             <p>
-              <b>Name:</b> Aquazoo Löbbecke Museum
+              <b>Name:</b> {props.name}
             </p>
             <br />
             <p>
-              <b>Description:</b> Das Aquazoo Löbbecke Museum ist eine Einheit
-              aus Zoo und Naturkundemuseum.
+              <b>Description:</b> {props.description}
             </p>
             <br />
             <p>
-              <b>Adress:</b> Kaiserswerther Str. 380
+              <b>Adress:</b> {props.street}
               <br />
-              40474 Düsseldorf, Germany
+              {props.zipCode} {props.city}, {props.country}
             </p>
             <br />
             <p>
-              <b>Opening Hours:</b> 10:00 - 18:00
+              <b>Opening Hours:</b> {props.openingHours}
             </p>
             <br />
             <p>
               <b>Website:</b>{' '}
-              <a href="https://www.duesseldorf.de/aquazoo.html" target="_blank">
+              <a
+                href={props.website}
+                target="_blank"
+                rel="noreferrer"
+                onClick="$(this).stopPropagation()"
+              >
                 Click here!
               </a>{' '}
             </p>
             <br />
             <p>
-              <b>Prizes:</b> Please check their website!
+              <b>Prizes:</b>{' '}
+              {isFreeOfCharge
+                ? 'Free of charge.'
+                : 'Please check their website.'}
             </p>
           </CardBody>
         </CardBack>
@@ -67,6 +75,7 @@ const CardContent = styled.div`
 
 const Card = styled.div`
   width: 300px;
+  margin-bottom: 10px;
 `
 
 const CardSide = styled.div`
