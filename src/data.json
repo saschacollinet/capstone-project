@@ -2,49 +2,49 @@
   {
     "id": 1,
     "name": "Natur- und Tierpark Brüggen",
+    "description": "Der Natur- und Tierpark Brüggen ist ein Zoo mit umfangreichem Spiel- und Freizeitbereich!",
     "street": "Brachter Str. 98",
-    "zipCode": 41379,
     "city": "Brüggen",
+    "zipCode": 41379,
     "country": "Germany",
     "openingHours": "09:00 - 18:00",
     "website": "https://natur-und-tierpark-brueggen.de",
-    "description": "Der Natur- und Tierpark Brüggen ist ein Zoo mit umfangreichem Spiel- und Freizeitbereich!",
     "freeOfCharge": false
   },
   {
     "id": 2,
     "name": "Freizeitpark Efteling",
+    "description": "Efteling, der märchenhafteste Freizeitpark Europas, ist eine besondere Welt für die ganze Familie!",
     "street": "Europalaan 1",
-    "zipCode": 5171,
     "city": "KW Kaatsheuvel",
+    "zipCode": 5171,
     "country": "Netherlands",
     "openingHours": "10:00 - 18:00",
     "website": "https://www.efteling.com/",
-    "description": "Efteling, der märchenhafteste Freizeitpark Europas, ist eine besondere Welt für die ganze Familie!",
     "freeOfCharge": false
   },
   {
     "id": 3,
     "name": "Bunter Garten",
+    "description": "Der Bunte Garten ist ein Stadtpark in der Innenstadt von Mönchengladbach.",
     "street": "Bettrather Str.",
-    "zipCode": 41061,
     "city": "Mönchengladbach",
+    "zipCode": 41061,
     "country": "Germany",
     "openingHours": "permanent",
     "website": "https://buntergarten.de/",
-    "description": "Der Bunte Garten ist ein Stadtpark in der Innenstadt von Mönchengladbach.",
     "freeOfCharge": true
   },
   {
     "id": 4,
     "name": "Aquazoo Löbbecke Museum",
+    "description": "Das Aquazoo Löbbecke Museum ist eine Einheit aus Zoo und Naturkundemuseum.",
     "street": "Kaiserswerther Str. 380",
-    "zipCode": 40474,
     "city": "Düsseldorf",
+    "zipCode": 40474,
     "country": "Germany",
     "openingHours": "10:00 - 18:00",
     "website": "https://www.duesseldorf.de/aquazoo.html",
-    "description": "Das Aquazoo Löbbecke Museum ist eine Einheit aus Zoo und Naturkundemuseum.",
     "freeOfCharge": false
   }
 ]
