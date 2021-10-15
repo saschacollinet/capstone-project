@@ -52,6 +52,7 @@ const Wrapper = styled.footer`
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  color: #333;
 `
 
 const Copyright = styled.div`

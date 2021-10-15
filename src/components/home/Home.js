@@ -21,4 +21,5 @@ const Wrapper = styled.section`
   flex-direction: column;
   gap: 1.3rem;
   width: 300px;
+  color: #333;
 `
