@@ -5,14 +5,26 @@ import Footer from '../footer/Footer'
 import FlipCard from '../card/FlipCard'
 import styled from 'styled-components/macro'
 
-export default function App() {
+export default function App({ data }) {
   return (
     <Wrapper>
       <Header />
       <Main>
         <Home />
         <br />
-        <FlipCard />
+        {data.map(activity => (
+          <FlipCard
+            name={activity.name}
+            description={activity.description}
+            street={activity.street}
+            city={activity.city}
+            zipCode={activity.zipCode}
+            country={activity.country}
+            openingHours={activity.openingHours}
+            website={activity.website}
+            freeOfCharge={activity.freeOfCharge}
+          />
+        ))}
       </Main>
       <Footer />
     </Wrapper>
