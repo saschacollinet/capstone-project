@@ -9,7 +9,8 @@ export default function Header() {
 }
 
 const Wrapper = styled.header`
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
   width: 100%;
   padding: 1.3rem 0;
   text-align: center;

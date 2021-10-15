@@ -17,8 +17,8 @@ const Wrapper = styled.section`
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 25px;
   padding: 1.3rem 0.6rem;
-  margin: 6rem 0.6rem 0;
   display: flex;
   flex-direction: column;
   gap: 1.3rem;
+  width: 300px;
 `

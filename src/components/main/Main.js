@@ -14,4 +14,5 @@ const Wrapper = styled.main`
   background-image: url(${mainBackground});
   background-size: cover;
   background-attachment: fixed;
+  padding: 6rem 0 7.3rem;
 `
