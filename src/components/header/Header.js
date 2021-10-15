@@ -10,16 +10,15 @@ export default function Header() {
 }
 
 const Wrapper = styled.header`
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   width: 100%;
-  /* padding: 1.3rem 0; */
   z-index: 2;
   position: fixed;
   top: 0;
 `
 
 const Logo = styled.img`
-  height: 80px;
+  height: 100px;
   padding: 0.5rem;
 `

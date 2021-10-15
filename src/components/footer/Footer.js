@@ -44,7 +44,7 @@ export default function Footer() {
 const Wrapper = styled.footer`
   width: 100%;
   font-size: 0.8rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   text-align: center;
   position: absolute;
