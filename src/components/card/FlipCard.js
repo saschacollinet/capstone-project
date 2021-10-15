@@ -26,7 +26,7 @@ export default function FlipCard(props) {
             </p>
             <br />
             <p>
-              <b>Adress:</b> {props.street}
+              <b>Address:</b> {props.street}
               <br />
               {props.zipCode} {props.city}, {props.country}
             </p>
