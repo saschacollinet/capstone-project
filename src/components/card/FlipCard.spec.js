@@ -88,5 +88,13 @@ describe('FlipCard', () => {
     const openingHoursContent = screen.getByText('09:00 - 18:00')
 
     expect(openingHoursContent).toBeInTheDocument()
+
+    const prizesTerm = screen.getByText('Prizes:')
+
+    expect(prizesTerm).toBeInTheDocument()
+
+    const prizesContent = screen.getByText('Please check their website.')
+
+    expect(prizesContent).toBeInTheDocument()
   })
 })
