@@ -41,7 +41,7 @@ export default function FlipCard(props) {
                 href={props.website}
                 target="_blank"
                 rel="noreferrer"
-                onClick="$(this).stopPropagation()"
+                onClick={event => event.stopPropagation()}
               >
                 Click here!
               </a>{' '}
