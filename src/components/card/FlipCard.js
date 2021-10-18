@@ -53,7 +53,7 @@ export default function FlipCard({
               </a>{' '}
             </p>
             <p>
-              <b>Prizes:</b>{' '}
+              <b>Prices:</b>{' '}
               {isFreeOfCharge
                 ? 'Free of charge.'
                 : 'Please check their website.'}
