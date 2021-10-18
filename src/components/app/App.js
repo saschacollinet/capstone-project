@@ -5,14 +5,14 @@ import Footer from '../footer/Footer'
 import FlipCard from '../card/FlipCard'
 import styled from 'styled-components/macro'
 
-export default function App({ data }) {
+export default function App({ activities }) {
   return (
     <Wrapper>
       <Header />
       <Main>
         <Home />
         <br />
-        {data.map(activity => (
+        {activities.map(activity => (
           <FlipCard
             name={activity.name}
             description={activity.description}
