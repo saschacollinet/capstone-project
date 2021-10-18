@@ -68,5 +68,5 @@ const ProfilesList = styled.ul`
 `
 
 const ProfilesAnchor = styled.a`
-  color: black;
+  color: #333;
 `
