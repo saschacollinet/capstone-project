@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react'
-
 import FlipCard from './FlipCard'
 
 describe('FlipCard', () => {
@@ -88,6 +87,14 @@ describe('FlipCard', () => {
     const openingHoursContent = screen.getByText('09:00 - 18:00')
 
     expect(openingHoursContent).toBeInTheDocument()
+
+    const websiteTerm = screen.getByText('Website:')
+
+    expect(websiteTerm).toBeInTheDocument()
+
+    const websiteContent = screen.getByText('Click here!')
+
+    expect(websiteContent).toBeInTheDocument()
 
     const prizesTerm = screen.getByText('Prizes:')
 
