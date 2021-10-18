@@ -22,7 +22,7 @@ export default function App({ activities }) {
             country={activity.country}
             openingHours={activity.openingHours}
             website={activity.website}
-            freeOfCharge={activity.freeOfCharge}
+            isFreeOfCharge={activity.isFreeOfCharge}
             key={activity.id}
           />
         ))}

@@ -11,10 +11,9 @@ export default function FlipCard({
   country,
   openingHours,
   website,
-  freeOfCharge,
+  isFreeOfCharge,
 }) {
   const [isCardFlipped, setIsCardFlipped] = useState(false)
-  const isFreeOfCharge = freeOfCharge
   const handleFlipCardClick = () => {
     setIsCardFlipped(!isCardFlipped)
   }
