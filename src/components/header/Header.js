@@ -4,7 +4,9 @@ import logo from '../../assets/images/logo.svg'
 export default function Header() {
   return (
     <Wrapper>
-      <Logo src={logo} alt="Allaround Family logo" />
+      <h1>
+        <Logo src={logo} alt="Allaround Family" />
+      </h1>
     </Wrapper>
   )
 }
