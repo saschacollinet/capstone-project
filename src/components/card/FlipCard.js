@@ -47,6 +47,7 @@ export default function FlipCard({
                 href={website}
                 target="_blank"
                 rel="noreferrer"
+                aria-label={website}
                 onClick={event => event.stopPropagation()}
               >
                 Click here!
