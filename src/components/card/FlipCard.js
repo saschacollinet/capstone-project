@@ -2,9 +2,19 @@ import styled, { css } from 'styled-components/macro'
 import { useState } from 'react'
 import mainBackground from '../../assets/images/mainBackground.jpg'
 
-export default function FlipCard(props) {
+export default function FlipCard({
+  name,
+  description,
+  street,
+  city,
+  zipCode,
+  country,
+  openingHours,
+  website,
+  freeOfCharge,
+}) {
   const [isCardFlipped, setIsCardFlipped] = useState(false)
-  const isFreeOfCharge = props.freeOfCharge
+  const isFreeOfCharge = freeOfCharge
   const handleFlipCardClick = () => {
     setIsCardFlipped(!isCardFlipped)
   }
@@ -12,33 +22,29 @@ export default function FlipCard(props) {
     <Card onClick={handleFlipCardClick}>
       <CardContent isCardFlipped={isCardFlipped}>
         <CardFront>
-          <CardTitle>{props.name}</CardTitle>
-          <CardSubtitle>{props.city}</CardSubtitle>
+          <CardTitle>{name}</CardTitle>
+          <CardSubtitle>{city}</CardSubtitle>
         </CardFront>
         <CardBack>
           <CardBody>
             <p>
-              <b>Name:</b> {props.name}
+              <b>Name:</b> {name}
             </p>
-            <br />
             <p>
-              <b>Description:</b> {props.description}
+              <b>Description:</b> {description}
             </p>
-            <br />
             <p>
-              <b>Address:</b> {props.street}
+              <b>Address:</b> {street}
               <br />
-              {props.zipCode} {props.city}, {props.country}
+              {zipCode} {city}, {country}
             </p>
-            <br />
             <p>
-              <b>Opening Hours:</b> {props.openingHours}
+              <b>Opening Hours:</b> {openingHours}
             </p>
-            <br />
             <p>
               <b>Website:</b>{' '}
               <a
-                href={props.website}
+                href={website}
                 target="_blank"
                 rel="noreferrer"
                 onClick={event => event.stopPropagation()}
@@ -46,7 +52,6 @@ export default function FlipCard(props) {
                 Click here!
               </a>{' '}
             </p>
-            <br />
             <p>
               <b>Prizes:</b>{' '}
               {isFreeOfCharge
@@ -137,4 +142,6 @@ const CardBody = styled.div`
   font-weight: 400;
   font-size: 0.9rem;
   line-height: 1.6;
+  display: grid;
+  gap: 1rem;
 `
