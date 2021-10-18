@@ -23,6 +23,7 @@ export default function App({ data }) {
             openingHours={activity.openingHours}
             website={activity.website}
             freeOfCharge={activity.freeOfCharge}
+            key={activity.id}
           />
         ))}
       </Main>
