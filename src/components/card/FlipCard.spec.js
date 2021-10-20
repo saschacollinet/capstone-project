@@ -84,10 +84,10 @@ describe('FlipCard', () => {
     const websiteContent = screen.getByText('Click here!')
     expect(websiteContent).toBeInTheDocument()
 
-    const prizesTerm = screen.getByText('Prizes:')
-    expect(prizesTerm).toBeInTheDocument()
+    const pricesTerm = screen.getByText('Prices:')
+    expect(pricesTerm).toBeInTheDocument()
 
-    const prizesContent = screen.getByText('Please check their website.')
-    expect(prizesContent).toBeInTheDocument()
+    const pricesContent = screen.getByText('Please check their website.')
+    expect(pricesContent).toBeInTheDocument()
   })
 })
