@@ -5,8 +5,10 @@ import Footer from '../footer/Footer'
 import FlipCard from '../card/FlipCard'
 import CreateActivityForm from '../createActivityForm/CreateActivityForm'
 import styled from 'styled-components/macro'
+import { useState } from 'react'
 
-export default function App({ activities }) {
+export default function App({ data }) {
+  const [activities, setActivities] = useState(data)
   return (
     <Wrapper>
       <Header />
@@ -28,7 +30,10 @@ export default function App({ activities }) {
           />
         ))}
         <br />
-        <CreateActivityForm />
+        <CreateActivityForm
+          activities={activities}
+          setActivities={setActivities}
+        />
       </Main>
       <Footer />
     </Wrapper>

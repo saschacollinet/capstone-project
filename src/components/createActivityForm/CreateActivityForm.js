@@ -1,37 +1,102 @@
+import { nanoid } from 'nanoid'
 import styled from 'styled-components'
 
-export default function CreateActivityForm() {
+export default function CreateActivityForm({ activities, setActivities }) {
+  function createNewActivity({
+    name,
+    description,
+    street,
+    zipCode,
+    city,
+    country,
+    openingHours,
+    website,
+    isFreeOfCharge,
+  }) {
+    const newActivity = [
+      ...activities,
+      {
+        id: nanoid(),
+        name: name,
+        description: description,
+        street: street,
+        city: city,
+        zipCode: zipCode,
+        country: country,
+        openingHours: openingHours,
+        website: website,
+        isFreeOfCharge: isFreeOfCharge,
+      },
+    ]
+    setActivities(newActivity)
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault()
+    const form = event.target
+    const {
+      name,
+      description,
+      street,
+      zipCode,
+      city,
+      country,
+      openingHours,
+      website,
+      isFreeOfCharge,
+    } = form.elements
+
+    createNewActivity({
+      name: name.value,
+      description: description.value,
+      street: street.value,
+      city: city.value,
+      zipCode: zipCode.value,
+      country: country.value,
+      openingHours: openingHours.value,
+      website: website.value,
+      isFreeOfCharge: JSON.parse(isFreeOfCharge.value),
+    })
+    form.reset()
+  }
+
+  console.log(activities)
+
   return (
-    <CreateForm>
+    <CreateForm
+      onSubmit={event => {
+        handleSubmit(event)
+      }}
+    >
       <CreateFormLabel>
         Name of Activity:
-        <input type="text" name="name" required autocomplete="Off" />
+        <input type="text" name="name" required autoComplete="Off" />
       </CreateFormLabel>
       <CreateFormLabel>
         Description (max. 100 chars):
         <textarea
           name="description"
           required
-          autocomplete="Off"
+          autoComplete="Off"
           rows="4"
-          maxlength="100"
+          maxLength="100"
         />
       </CreateFormLabel>
       <CreateFormLabel>
         Street:
-        <input type="text" name="street" required autocomplete="Off" />
+        <input type="text" name="street" required autoComplete="Off" />
       </CreateFormLabel>
       <CreateFormLabel>
         Zip Code:
-        <input type="text" name="zipCode" required autocomplete="Off" />
+        <input type="text" name="zipCode" required autoComplete="Off" />
       </CreateFormLabel>
       <CreateFormLabel>
         City:
-        <input type="text" name="city" required autocomplete="Off" />
+        <input type="text" name="city" required autoComplete="Off" />
       </CreateFormLabel>
       <CreateFormLabel>
         Country:
-        <input type="text" name="country" required autocomplete="Off" />
+        <input type="text" name="country" required autoComplete="Off" />
       </CreateFormLabel>
       <CreateFormLabel>
         Opening Hours:
@@ -39,23 +104,23 @@ export default function CreateActivityForm() {
           type="text"
           name="openingHours"
           required
-          autocomplete="Off"
+          autoComplete="Off"
         ></input>
       </CreateFormLabel>
       <CreateFormLabel>
         Website:
-        <input type="text" name="website" required autocomplete="Off" />
+        <input type="text" name="website" required autoComplete="Off" />
       </CreateFormLabel>
       <div>
         <p>Free of Charge:</p>
         <RadioButtonBox>
           <CreateFormLabel>
             Yes:
-            <input type="radio" name="isFreeOfCharge" required />
+            <input type="radio" name="isFreeOfCharge" value="true" required />
           </CreateFormLabel>
           <CreateFormLabel>
             No:
-            <input type="radio" name="isFreeOfCharge" required />
+            <input type="radio" name="isFreeOfCharge" value="false" required />
           </CreateFormLabel>
         </RadioButtonBox>
       </div>
