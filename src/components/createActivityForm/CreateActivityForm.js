@@ -5,33 +5,33 @@ export default function CreateActivityForm() {
     <CreateForm>
       <CreateFormLabel>
         Name of Activity:
-        <input type="text" name="name" required autoComplete="Off" />
+        <input type="text" name="name" required autocomplete="Off" />
       </CreateFormLabel>
       <CreateFormLabel>
         Description (max. 100 chars):
         <textarea
           name="description"
           required
-          autoComplete="Off"
+          autocomplete="Off"
           rows="4"
           maxlength="100"
         />
       </CreateFormLabel>
       <CreateFormLabel>
         Street:
-        <input type="text" name="street" required autoComplete="Off" />
+        <input type="text" name="street" required autocomplete="Off" />
       </CreateFormLabel>
       <CreateFormLabel>
         Zip Code:
-        <input type="text" name="zipCode" required autoComplete="Off" />
+        <input type="text" name="zipCode" required autocomplete="Off" />
       </CreateFormLabel>
       <CreateFormLabel>
         City:
-        <input type="text" name="city" required autoComplete="Off" />
+        <input type="text" name="city" required autocomplete="Off" />
       </CreateFormLabel>
       <CreateFormLabel>
         Country:
-        <input type="text" name="country" required autoComplete="Off" />
+        <input type="text" name="country" required autocomplete="Off" />
       </CreateFormLabel>
       <CreateFormLabel>
         Opening Hours:
@@ -39,12 +39,12 @@ export default function CreateActivityForm() {
           type="text"
           name="openingHours"
           required
-          autoComplete="Off"
+          autocomplete="Off"
         ></input>
       </CreateFormLabel>
       <CreateFormLabel>
         Website:
-        <input type="text" name="website" required autoComplete="Off" />
+        <input type="text" name="website" required autocomplete="Off" />
       </CreateFormLabel>
       <div>
         <p>Free of Charge:</p>
