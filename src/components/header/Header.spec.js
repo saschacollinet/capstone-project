@@ -6,7 +6,7 @@ describe('Header', () => {
   it('renders', () => {
     render(<Header />)
 
-    const logo = screen.getByRole('img')
+    const logo = screen.getByAltText('Allaround Family')
 
     expect(logo).toBeInTheDocument()
   })
