@@ -6,16 +6,8 @@ describe('Header', () => {
   it('renders', () => {
     render(<Header />)
 
-    const h1 = screen.getByRole('heading')
+    const logo = screen.getByAltText('Allaround Family')
 
-    expect(h1).toBeInTheDocument()
-  })
-
-  it('displays the text Allaround Family', () => {
-    render(<Header />)
-
-    const text = screen.getByText('Allaround Family')
-
-    expect(text).toBeInTheDocument()
+    expect(logo).toBeInTheDocument()
   })
 })

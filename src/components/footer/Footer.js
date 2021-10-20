@@ -45,12 +45,14 @@ const Wrapper = styled.footer`
   width: 100%;
   font-size: 0.8rem;
   background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
   text-align: center;
   position: absolute;
   bottom: 0;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  color: #333;
 `
 
 const Copyright = styled.div`
@@ -66,5 +68,5 @@ const ProfilesList = styled.ul`
 `
 
 const ProfilesAnchor = styled.a`
-  color: black;
+  color: #333;
 `
