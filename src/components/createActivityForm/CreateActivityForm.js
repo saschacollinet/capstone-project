@@ -66,12 +66,7 @@ export default function CreateActivityForm({ onCreateNewActivity }) {
       </CreateFormLabel>
       <CreateFormLabel>
         Opening Hours:
-        <input
-          type="text"
-          name="openingHours"
-          required
-          autoComplete="Off"
-        ></input>
+        <input type="text" name="openingHours" required autoComplete="Off" />
       </CreateFormLabel>
       <CreateFormLabel>
         Website:
