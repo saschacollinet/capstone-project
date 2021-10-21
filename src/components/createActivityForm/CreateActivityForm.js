@@ -5,33 +5,9 @@ export default function CreateActivityForm({
   initialActivities,
   setActivities,
 }) {
-  function createNewActivity({
-    name,
-    description,
-    street,
-    zipCode,
-    city,
-    country,
-    openingHours,
-    website,
-    isFreeOfCharge,
-  }) {
-    const newActivity = [
-      ...initialActivities,
-      {
-        id: nanoid(),
-        name: name,
-        description: description,
-        street: street,
-        city: city,
-        zipCode: zipCode,
-        country: country,
-        openingHours: openingHours,
-        website: website,
-        isFreeOfCharge: isFreeOfCharge,
-      },
-    ]
-    setActivities(newActivity)
+  function createNewActivity(newActivity) {
+    const newActivities = [...initialActivities, newActivity]
+    setActivities(newActivities)
   }
 
   function handleSubmit(event) {
@@ -50,6 +26,7 @@ export default function CreateActivityForm({
     } = form.elements
 
     createNewActivity({
+      id: nanoid(),
       name: name.value,
       description: description.value,
       street: street.value,
@@ -64,11 +41,7 @@ export default function CreateActivityForm({
   }
 
   return (
-    <CreateForm
-      onSubmit={event => {
-        handleSubmit(event)
-      }}
-    >
+    <CreateForm onSubmit={handleSubmit}>
       <CreateFormLabel>
         Name of Activity:
         <input type="text" name="name" required autoComplete="Off" />
