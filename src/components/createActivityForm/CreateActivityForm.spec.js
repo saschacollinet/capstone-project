@@ -40,10 +40,20 @@ describe('CreateActivityForm', () => {
 
   it('has a textarea "Description (max. 100 chars):" with a maximum length of 100 Characters', () => {
     render(<CreateActivityForm />)
+
     const inputElDescription = screen.getByLabelText(
       'Description (max. 100 chars):'
     )
     expect(inputElDescription).toHaveAttribute('maxLength', '100')
+  })
+
+  it('has a textarea "Description (max. 100 chars):" with 4 rows', () => {
+    render(<CreateActivityForm />)
+
+    const inputElDescription = screen.getByLabelText(
+      'Description (max. 100 chars):'
+    )
+    expect(inputElDescription).toHaveAttribute('rows', '4')
   })
 
   it('has a paragraph "Free of Charge:"', () => {
