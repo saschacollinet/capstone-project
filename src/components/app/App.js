@@ -30,14 +30,16 @@ export default function App({ data }) {
           />
         ))}
         <br />
-        <CreateActivityForm
-          initialActivities={initialActivities}
-          setActivities={setActivities}
-        />
+        <CreateActivityForm onCreateNewActivity={handleCreateNewActivity} />
       </Main>
       <Footer />
     </Wrapper>
   )
+
+  function handleCreateNewActivity(newActivity) {
+    const newActivities = [...initialActivities, newActivity]
+    setActivities(newActivities)
+  }
 }
 
 const Wrapper = styled.div`

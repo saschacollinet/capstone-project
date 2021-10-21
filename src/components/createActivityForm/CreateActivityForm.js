@@ -1,15 +1,7 @@
 import { nanoid } from 'nanoid'
 import styled from 'styled-components'
 
-export default function CreateActivityForm({
-  initialActivities,
-  setActivities,
-}) {
-  function createNewActivity(newActivity) {
-    const newActivities = [...initialActivities, newActivity]
-    setActivities(newActivities)
-  }
-
+export default function CreateActivityForm({ onCreateNewActivity }) {
   function handleSubmit(event) {
     event.preventDefault()
     const form = event.target
@@ -25,7 +17,7 @@ export default function CreateActivityForm({
       isFreeOfCharge,
     } = form.elements
 
-    createNewActivity({
+    onCreateNewActivity({
       id: nanoid(),
       name: name.value,
       description: description.value,
