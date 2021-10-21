@@ -60,8 +60,6 @@ export default function CreateActivityForm({ activities, setActivities }) {
     form.reset()
   }
 
-  console.log(activities)
-
   return (
     <CreateForm
       onSubmit={event => {
