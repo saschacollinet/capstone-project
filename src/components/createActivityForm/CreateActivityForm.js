@@ -33,12 +33,12 @@ export default function CreateActivityForm({ onCreateNewActivity }) {
   }
 
   return (
-    <CreateForm onSubmit={handleSubmit}>
-      <CreateFormLabel>
+    <Form onSubmit={handleSubmit}>
+      <Label>
         Name of Activity:
         <input type="text" name="name" required autoComplete="Off" />
-      </CreateFormLabel>
-      <CreateFormLabel>
+      </Label>
+      <Label>
         Description (max. 100 chars):
         <textarea
           name="description"
@@ -47,50 +47,50 @@ export default function CreateActivityForm({ onCreateNewActivity }) {
           rows="4"
           maxLength="100"
         />
-      </CreateFormLabel>
-      <CreateFormLabel>
+      </Label>
+      <Label>
         Street:
         <input type="text" name="street" required autoComplete="Off" />
-      </CreateFormLabel>
-      <CreateFormLabel>
+      </Label>
+      <Label>
         Zip Code:
         <input type="text" name="zipCode" required autoComplete="Off" />
-      </CreateFormLabel>
-      <CreateFormLabel>
+      </Label>
+      <Label>
         City:
         <input type="text" name="city" required autoComplete="Off" />
-      </CreateFormLabel>
-      <CreateFormLabel>
+      </Label>
+      <Label>
         Country:
         <input type="text" name="country" required autoComplete="Off" />
-      </CreateFormLabel>
-      <CreateFormLabel>
+      </Label>
+      <Label>
         Opening Hours:
         <input type="text" name="openingHours" required autoComplete="Off" />
-      </CreateFormLabel>
-      <CreateFormLabel>
+      </Label>
+      <Label>
         Website:
         <input type="text" name="website" required autoComplete="Off" />
-      </CreateFormLabel>
+      </Label>
       <div>
         <p>Free of Charge:</p>
         <RadioButtonBox>
-          <CreateFormLabel>
+          <Label>
             Yes:
             <input type="radio" name="isFreeOfCharge" value="true" required />
-          </CreateFormLabel>
-          <CreateFormLabel>
+          </Label>
+          <Label>
             No:
             <input type="radio" name="isFreeOfCharge" value="false" required />
-          </CreateFormLabel>
+          </Label>
         </RadioButtonBox>
       </div>
-      <SubmitButton>Submit</SubmitButton>
-    </CreateForm>
+      <Button>Submit</Button>
+    </Form>
   )
 }
 
-const CreateForm = styled.form`
+const Form = styled.form`
   background-color: rgba(255, 255, 255, 0.7);
   color: #333;
   padding: 15px;
@@ -101,7 +101,7 @@ const CreateForm = styled.form`
   gap: 1rem;
 `
 
-const CreateFormLabel = styled.label`
+const Label = styled.label`
   display: flex;
   flex-direction: column;
 `
@@ -113,7 +113,7 @@ const RadioButtonBox = styled.div`
   justify-content: center;
 `
 
-const SubmitButton = styled.button`
+const Button = styled.button`
   padding: 5px 0;
   border-radius: 25px;
   background-color: white;
