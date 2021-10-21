@@ -8,14 +8,14 @@ import styled from 'styled-components/macro'
 import { useState } from 'react'
 
 export default function App({ data }) {
-  const [activities, setActivities] = useState(data)
+  const [initialActivities, setActivities] = useState(data)
   return (
     <Wrapper>
       <Header />
       <Main>
         <Home />
         <br />
-        {activities.map(activity => (
+        {initialActivities.map(activity => (
           <FlipCard
             name={activity.name}
             description={activity.description}
@@ -31,7 +31,7 @@ export default function App({ data }) {
         ))}
         <br />
         <CreateActivityForm
-          activities={activities}
+          initialActivities={initialActivities}
           setActivities={setActivities}
         />
       </Main>
