@@ -63,4 +63,5 @@ export default function App({ initialActivities }) {
 const Wrapper = styled.div`
   position: relative;
   overflow-x: hidden;
+  height: 100%;
 `

@@ -15,4 +15,5 @@ const Wrapper = styled.main`
   background-size: cover;
   background-attachment: fixed;
   padding: 7.6rem 0 7.3rem;
+  overflow: auto;
 `
