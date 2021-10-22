@@ -15,7 +15,7 @@ const Wrapper = styled.header`
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   width: 100%;
-  z-index: 2;
+  z-index: 9;
   position: fixed;
   top: 0;
 `
