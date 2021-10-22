@@ -4,8 +4,7 @@ import CreateActivityForm from './CreateActivityForm'
 
 describe('CreateActivityForm', () => {
   it('has ten required input fields', () => {
-    const mockOnCreateNewActivity = jest.fn()
-    render(<CreateActivityForm onCreateNewActivity={mockOnCreateNewActivity} />)
+    render(<CreateActivityForm />)
 
     const inputElName = screen.getByLabelText('Name of Activity:')
     expect(inputElName).toBeRequired()
@@ -41,8 +40,7 @@ describe('CreateActivityForm', () => {
   })
 
   it('has a textarea "Description (max. 100 chars):" with a maximum length of 100 Characters', () => {
-    const mockOnCreateNewActivity = jest.fn()
-    render(<CreateActivityForm onCreateNewActivity={mockOnCreateNewActivity} />)
+    render(<CreateActivityForm />)
 
     const inputElDescription = screen.getByLabelText(
       'Description (max. 100 chars):'
@@ -51,8 +49,7 @@ describe('CreateActivityForm', () => {
   })
 
   it('has a textarea "Description (max. 100 chars):" with 4 rows', () => {
-    const mockOnCreateNewActivity = jest.fn()
-    render(<CreateActivityForm onCreateNewActivity={mockOnCreateNewActivity} />)
+    render(<CreateActivityForm />)
 
     const inputElDescription = screen.getByLabelText(
       'Description (max. 100 chars):'
@@ -61,8 +58,7 @@ describe('CreateActivityForm', () => {
   })
 
   it('has a paragraph "Free of Charge:"', () => {
-    const mockOnCreateNewActivity = jest.fn()
-    render(<CreateActivityForm onCreateNewActivity={mockOnCreateNewActivity} />)
+    render(<CreateActivityForm />)
 
     const freeOfChargeParagraph = screen.getByText('Free of Charge:')
     expect(freeOfChargeParagraph).toBeInTheDocument()
