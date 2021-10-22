@@ -2,36 +2,6 @@ import { nanoid } from 'nanoid'
 import styled from 'styled-components'
 
 export default function CreateActivityForm({ onCreateNewActivity }) {
-  function handleSubmit(event) {
-    event.preventDefault()
-    const form = event.target
-    const {
-      name,
-      description,
-      street,
-      zipCode,
-      city,
-      country,
-      openingHours,
-      website,
-      isFreeOfCharge,
-    } = form.elements
-
-    onCreateNewActivity({
-      id: nanoid(),
-      name: name.value,
-      description: description.value,
-      street: street.value,
-      city: city.value,
-      zipCode: zipCode.value,
-      country: country.value,
-      openingHours: openingHours.value,
-      website: website.value,
-      isFreeOfCharge: JSON.parse(isFreeOfCharge.value),
-    })
-    form.reset()
-  }
-
   return (
     <Form onSubmit={handleSubmit}>
       <Label>
@@ -88,6 +58,36 @@ export default function CreateActivityForm({ onCreateNewActivity }) {
       <Button>Submit</Button>
     </Form>
   )
+
+  function handleSubmit(event) {
+    event.preventDefault()
+    const form = event.target
+    const {
+      name,
+      description,
+      street,
+      zipCode,
+      city,
+      country,
+      openingHours,
+      website,
+      isFreeOfCharge,
+    } = form.elements
+
+    onCreateNewActivity({
+      id: nanoid(),
+      name: name.value,
+      description: description.value,
+      street: street.value,
+      city: city.value,
+      zipCode: zipCode.value,
+      country: country.value,
+      openingHours: openingHours.value,
+      website: website.value,
+      isFreeOfCharge: JSON.parse(isFreeOfCharge.value),
+    })
+    form.reset()
+  }
 }
 
 const Form = styled.form`
