@@ -69,7 +69,7 @@ const CardContent = styled.div`
   text-align: center;
   position: relative;
   padding: 15em 5em;
-  transition: transform 3s;
+  transition: transform 2s;
   transform-style: preserve-3d;
   ${({ isCardFlipped }) =>
     isCardFlipped &&
