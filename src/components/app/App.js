@@ -10,6 +10,7 @@ import styled from 'styled-components/macro'
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { theme } from '../../theme'
+import { Route, Switch } from 'react-router-dom'
 
 export default function App({ initialActivities }) {
   const [activities, setActivities] = useState(initialActivities)
@@ -19,26 +20,34 @@ export default function App({ initialActivities }) {
       <Wrapper>
         <Header />
         <Burger open={open} setOpen={setOpen} />
-        <Menu open={open} />
+        <Menu open={open} setOpen={setOpen} />
         <Main>
-          <Home />
-          <br />
-          {activities.map(activity => (
-            <FlipCard
-              name={activity.name}
-              description={activity.description}
-              street={activity.street}
-              city={activity.city}
-              zipCode={activity.zipCode}
-              country={activity.country}
-              openingHours={activity.openingHours}
-              website={activity.website}
-              isFreeOfCharge={activity.isFreeOfCharge}
-              key={activity.id}
-            />
-          ))}
-          <br />
-          <CreateActivityForm onCreateNewActivity={handleCreateNewActivity} />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/list">
+              {activities.map(activity => (
+                <FlipCard
+                  name={activity.name}
+                  description={activity.description}
+                  street={activity.street}
+                  city={activity.city}
+                  zipCode={activity.zipCode}
+                  country={activity.country}
+                  openingHours={activity.openingHours}
+                  website={activity.website}
+                  isFreeOfCharge={activity.isFreeOfCharge}
+                  key={activity.id}
+                />
+              ))}
+            </Route>
+            <Route exact path="/create">
+              <CreateActivityForm
+                onCreateNewActivity={handleCreateNewActivity}
+              />
+            </Route>
+          </Switch>
         </Main>
         <Footer />
       </Wrapper>
