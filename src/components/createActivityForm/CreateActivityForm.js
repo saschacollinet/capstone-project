@@ -97,7 +97,7 @@ export default function CreateActivityForm({ onCreateNewActivity }) {
 const Form = styled.form`
   background-color: rgba(255, 255, 255, 0.7);
   color: #333;
-  padding: 15px;
+  padding: 1.3rem;
   border-radius: 25px;
   display: flex;
   flex-direction: column;
@@ -108,6 +108,7 @@ const Form = styled.form`
 const Label = styled.label`
   display: flex;
   flex-direction: column;
+  padding: 0.06rem;
 `
 
 const RadioButtonBox = styled.div`
