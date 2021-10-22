@@ -37,7 +37,7 @@ export default function App({ initialActivities }) {
   )
 
   function handleCreateNewActivity(newActivity) {
-    const newActivities = [...initialActivities, newActivity]
+    const newActivities = [...activities, newActivity]
     setActivities(newActivities)
   }
 }
