@@ -13,7 +13,7 @@ export default function Burger({ open, setOpen }) {
 const StyledBurger = styled.button`
   position: fixed;
   top: 3.5rem;
-  right: 1rem;
+  right: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
