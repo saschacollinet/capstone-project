@@ -81,6 +81,7 @@ const CardContent = styled.div`
 const Card = styled.div`
   width: 300px;
   margin-bottom: 10px;
+  cursor: pointer;
 `
 
 const CardSide = styled.div`
