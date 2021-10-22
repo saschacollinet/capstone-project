@@ -117,7 +117,7 @@ const CardFront = styled(CardSide)`
 `
 
 const CardTitle = styled.h3`
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   transform: translateZ(9rem);
   order: 2;
   text-transform: uppercase;
