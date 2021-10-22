@@ -1,5 +1,6 @@
 import Header from '../header/Header'
 import Burger from '../burger/burger'
+import Menu from '../menu/menu'
 import Main from '../main/Main'
 import Home from '../home/Home'
 import Footer from '../footer/Footer'
@@ -12,11 +13,13 @@ import { theme } from '../../theme'
 
 export default function App({ initialActivities }) {
   const [activities, setActivities] = useState(initialActivities)
+  const [open, setOpen] = useState(false)
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
         <Header />
-        <Burger />
+        <Burger open={open} setOpen={setOpen} />
+        <Menu open={open} />
         <Main>
           <Home />
           <br />
@@ -50,4 +53,5 @@ export default function App({ initialActivities }) {
 
 const Wrapper = styled.div`
   position: relative;
+  overflow-x: hidden;
 `
