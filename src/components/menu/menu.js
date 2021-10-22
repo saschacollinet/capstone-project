@@ -18,7 +18,7 @@ export default function Menu({ open, setOpen }) {
 }
 
 const StyledMenu = styled.nav`
-  z-index: 8;
+  z-index: 9;
   display: flex;
   flex-direction: column;
   justify-content: center;
