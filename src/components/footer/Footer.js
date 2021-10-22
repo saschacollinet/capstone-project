@@ -53,6 +53,7 @@ const Wrapper = styled.footer`
   flex-direction: column;
   gap: 0.6rem;
   color: #333;
+  z-index: 9;
 `
 
 const Copyright = styled.div`
@@ -69,4 +70,8 @@ const ProfilesList = styled.ul`
 
 const ProfilesAnchor = styled.a`
   color: #333;
+
+  &:hover {
+    color: ${({ theme }) => theme.primaryHover};
+  }
 `
