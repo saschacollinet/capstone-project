@@ -7,15 +7,15 @@ import CreateActivityForm from '../createActivityForm/CreateActivityForm'
 import styled from 'styled-components/macro'
 import { useState } from 'react'
 
-export default function App({ data }) {
-  const [initialActivities, setActivities] = useState(data)
+export default function App({ initialActivities }) {
+  const [activities, setActivities] = useState(initialActivities)
   return (
     <Wrapper>
       <Header />
       <Main>
         <Home />
         <br />
-        {initialActivities.map(activity => (
+        {activities.map(activity => (
           <FlipCard
             name={activity.name}
             description={activity.description}

@@ -8,7 +8,7 @@ import data from './data.json'
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles />
-    <App data={data} />
+    <App initialActivities={data} />
   </React.StrictMode>,
   document.getElementById('root')
 )
