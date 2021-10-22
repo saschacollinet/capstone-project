@@ -1,7 +1,9 @@
 import { nanoid } from 'nanoid'
 import styled from 'styled-components'
+import { useState } from 'react'
 
 export default function CreateActivityForm({ onCreateNewActivity }) {
+  const [characterCount, setCharacterCount] = useState(0)
   return (
     <Form onSubmit={handleSubmit}>
       <Label>
@@ -16,8 +18,10 @@ export default function CreateActivityForm({ onCreateNewActivity }) {
           autoComplete="Off"
           rows="4"
           maxLength="100"
+          onChange={event => setCharacterCount(event.target.value.length)}
         />
       </Label>
+      <p>Number of characters used: {characterCount}</p>
       <Label>
         Street:
         <input type="text" name="street" required autoComplete="Off" />
