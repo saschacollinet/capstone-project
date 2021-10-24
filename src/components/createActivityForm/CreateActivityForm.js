@@ -1,9 +1,11 @@
 import { nanoid } from 'nanoid'
 import styled from 'styled-components'
 import { useState } from 'react'
+import { useHistory } from 'react-router'
 
 export default function CreateActivityForm({ onCreateNewActivity }) {
   const [characterCount, setCharacterCount] = useState(0)
+  const history = useHistory()
   return (
     <Form onSubmit={handleSubmit}>
       <Label>
@@ -91,6 +93,7 @@ export default function CreateActivityForm({ onCreateNewActivity }) {
       isFreeOfCharge: JSON.parse(isFreeOfCharge.value),
     })
     form.reset()
+    history.push('/list')
   }
 }
 
