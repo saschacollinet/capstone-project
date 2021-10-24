@@ -7,20 +7,25 @@ import Footer from '../footer/Footer'
 import FlipCard from '../card/FlipCard'
 import CreateActivityForm from '../createActivityForm/CreateActivityForm'
 import styled from 'styled-components/macro'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { theme } from '../../theme'
 import { Route, Switch } from 'react-router-dom'
+import OnClickOutside from '../hooks/OnClickOutside'
 
 export default function App({ initialActivities }) {
   const [activities, setActivities] = useState(initialActivities)
   const [open, setOpen] = useState(false)
+  const node = useRef()
+  OnClickOutside(node, () => setOpen(false))
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
         <Header />
-        <Burger open={open} setOpen={setOpen} />
-        <Menu open={open} setOpen={setOpen} />
+        <div ref={node}>
+          <Burger open={open} setOpen={setOpen} />
+          <Menu open={open} setOpen={setOpen} />
+        </div>
         <Main>
           <Switch>
             <Route exact path="/">
