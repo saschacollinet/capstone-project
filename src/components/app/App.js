@@ -23,8 +23,8 @@ export default function App({ initialActivities }) {
       <Wrapper>
         <Header />
         <div ref={node}>
-          <BurgerButton open={open} setOpen={setOpen} />
-          <BurgerMenu open={open} setOpen={setOpen} />
+          <BurgerButton open={open} onClick={() => setOpen(!open)} />
+          <BurgerMenu open={open} onClick={() => setOpen(!open)} />
         </div>
         <Main>
           <Switch>

@@ -1,16 +1,16 @@
 import styled from 'styled-components/macro'
 
-export default function Burger({ open, setOpen }) {
+export default function BurgerButton({ open, onClick }) {
   return (
-    <StyledBurger open={open} onClick={() => setOpen(!open)}>
+    <Button open={open} onClick={onClick}>
       <div />
       <div />
       <div />
-    </StyledBurger>
+    </Button>
   )
 }
 
-const StyledBurger = styled.button`
+const Button = styled.button`
   position: fixed;
   top: 3.5rem;
   right: 1.5rem;

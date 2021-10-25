@@ -1,23 +1,23 @@
 import styled from 'styled-components/macro'
 import { NavLink } from 'react-router-dom'
 
-export default function Menu({ open, setOpen }) {
+export default function Menu({ open, onClick }) {
   return (
-    <StyledMenu open={open}>
-      <StyledLink to="/" open={open} onClick={() => setOpen(!open)}>
+    <Nav open={open}>
+      <StyledLink to="/" onClick={onClick}>
         Home
       </StyledLink>
-      <StyledLink to="/list" open={open} onClick={() => setOpen(!open)}>
+      <StyledLink to="/list" onClick={onClick}>
         Activity List
       </StyledLink>
-      <StyledLink to="/create" open={open} onClick={() => setOpen(!open)}>
+      <StyledLink to="/create" onClick={onClick}>
         Add Activity
       </StyledLink>
-    </StyledMenu>
+    </Nav>
   )
 }
 
-const StyledMenu = styled.nav`
+const Nav = styled.nav`
   z-index: 9;
   display: flex;
   flex-direction: column;
