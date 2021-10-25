@@ -6,9 +6,9 @@ export default function Header() {
   return (
     <Wrapper>
       <h1>
-        <StyledLink to="/">
+        <NavLink to="/">
           <Logo src={logo} alt="Allaround Family" />
-        </StyledLink>
+        </NavLink>
       </h1>
     </Wrapper>
   )
@@ -21,12 +21,6 @@ const Wrapper = styled.header`
   z-index: 8;
   position: fixed;
   top: 0;
-`
-
-const StyledLink = styled(NavLink)`
-  &:focus {
-    outline: none;
-  }
 `
 
 const Logo = styled.img`
