@@ -11,13 +11,11 @@ const GlobalStyles = createGlobalStyle`
 html {
   box-sizing: border-box;
   height: 100%;
-  overflow-x: hidden;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
   height: 100%;
-  overflow-x: hidden;
 }
 `
 
