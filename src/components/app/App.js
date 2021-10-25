@@ -1,10 +1,10 @@
 import Header from '../header/Header'
-import Burger from '../burger/burger'
-import Menu from '../menu/menu'
+import BurgerButton from '../burgerButton/BurgerButton'
+import BurgerMenu from '../burgerMenu/BurgerMenu'
 import Main from '../main/Main'
 import Home from '../home/Home'
 import Footer from '../footer/Footer'
-import FlipCard from '../card/FlipCard'
+import FlipCard from '../flipCard/FlipCard'
 import CreateActivityForm from '../createActivityForm/CreateActivityForm'
 import styled from 'styled-components/macro'
 import { useState, useRef } from 'react'
@@ -24,8 +24,8 @@ export default function App({ initialActivities }) {
       <Wrapper>
         <Header />
         <div ref={node}>
-          <Burger open={open} setOpen={setOpen} />
-          <Menu open={open} setOpen={setOpen} />
+          <BurgerButton open={open} setOpen={setOpen} />
+          <BurgerMenu open={open} setOpen={setOpen} />
         </div>
         <Main>
           <ScrollToTop>
