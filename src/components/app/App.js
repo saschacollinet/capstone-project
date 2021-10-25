@@ -11,14 +11,13 @@ import { useState, useRef } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { theme } from '../../theme'
 import { Route, Switch } from 'react-router-dom'
-import OnClickOutside from '../hooks/OnClickOutside'
-import ScrollToTop from '../hooks/ScrollToTop'
+import useClickOutside from '../hooks/useClickOutside'
 
 export default function App({ initialActivities }) {
   const [activities, setActivities] = useState(initialActivities)
   const [open, setOpen] = useState(false)
   const node = useRef()
-  OnClickOutside(node, () => setOpen(false))
+  useClickOutside(node, () => setOpen(false))
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
@@ -28,34 +27,32 @@ export default function App({ initialActivities }) {
           <BurgerMenu open={open} setOpen={setOpen} />
         </div>
         <Main>
-          <ScrollToTop>
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route exact path="/list">
-                {activities.map(activity => (
-                  <FlipCard
-                    name={activity.name}
-                    description={activity.description}
-                    street={activity.street}
-                    city={activity.city}
-                    zipCode={activity.zipCode}
-                    country={activity.country}
-                    openingHours={activity.openingHours}
-                    website={activity.website}
-                    isFreeOfCharge={activity.isFreeOfCharge}
-                    key={activity.id}
-                  />
-                ))}
-              </Route>
-              <Route exact path="/create">
-                <CreateActivityForm
-                  onCreateNewActivity={handleCreateNewActivity}
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/list">
+              {activities.map(activity => (
+                <FlipCard
+                  name={activity.name}
+                  description={activity.description}
+                  street={activity.street}
+                  city={activity.city}
+                  zipCode={activity.zipCode}
+                  country={activity.country}
+                  openingHours={activity.openingHours}
+                  website={activity.website}
+                  isFreeOfCharge={activity.isFreeOfCharge}
+                  key={activity.id}
                 />
-              </Route>
-            </Switch>
-          </ScrollToTop>
+              ))}
+            </Route>
+            <Route exact path="/create">
+              <CreateActivityForm
+                onCreateNewActivity={handleCreateNewActivity}
+              />
+            </Route>
+          </Switch>
         </Main>
         <Footer />
       </Wrapper>
@@ -70,6 +67,5 @@ export default function App({ initialActivities }) {
 
 const Wrapper = styled.div`
   position: relative;
-  overflow-x: hidden;
   height: 100%;
 `
