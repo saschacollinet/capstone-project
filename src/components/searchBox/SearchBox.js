@@ -1,25 +1,30 @@
 import styled, { css } from 'styled-components/macro'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
+import useClickOutside from '../hooks/useClickOutside'
 
 export default function SearchBox({ searchTerm, onChange }) {
   const [isToggled, setIsToggled] = useState(false)
   function handleToggled() {
     setIsToggled(!isToggled)
   }
+  const node = useRef()
+  useClickOutside(node, () => setIsToggled(false))
   return (
-    <Form>
-      <Input
-        type="text"
-        name="input"
-        isToggled={isToggled}
-        searchTerm={searchTerm}
-        onChange={onChange}
-      />
-      <NavLink to="/list">
-        <Button isToggled={isToggled} onClick={handleToggled} />
-      </NavLink>
-    </Form>
+    <div ref={node}>
+      <Form>
+        <Input
+          type="text"
+          name="input"
+          isToggled={isToggled}
+          searchTerm={searchTerm}
+          onChange={onChange}
+        />
+        <NavLink to="/list">
+          <Button isToggled={isToggled} onClick={handleToggled} />
+        </NavLink>
+      </Form>
+    </div>
   )
 }
 
