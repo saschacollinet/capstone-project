@@ -1,15 +1,24 @@
 import styled, { css } from 'styled-components/macro'
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
-export default function SearchBox() {
+export default function SearchBox({ searchTerm, onChange }) {
   const [isToggled, setIsToggled] = useState(false)
   function handleToggled() {
     setIsToggled(!isToggled)
   }
   return (
-    <Form id="content">
-      <Input type="text" name="input" isToggled={isToggled} />
-      <Button type="reset" isToggled={isToggled} onClick={handleToggled} />
+    <Form>
+      <Input
+        type="text"
+        name="input"
+        isToggled={isToggled}
+        searchTerm={searchTerm}
+        onChange={onChange}
+      />
+      <NavLink to="/list">
+        <Button isToggled={isToggled} onClick={handleToggled} />
+      </NavLink>
     </Form>
   )
 }

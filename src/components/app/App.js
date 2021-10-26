@@ -16,30 +16,63 @@ export default function App({ initialActivities }) {
   const [activities, setActivities] = useState(
     loadFromLocal('localActivities') ?? initialActivities
   )
+  const [searchTerm, setSearchTerm] = useState('')
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
-        <Header />
+        <Header
+          searchTerm={searchTerm}
+          onChange={event => {
+            setSearchTerm(event.target.value)
+          }}
+        />
         <Main>
           <Switch>
             <Route exact path="/">
               <Home />
             </Route>
             <Route exact path="/list">
-              {activities.map(activity => (
-                <FlipCard
-                  name={activity.name}
-                  description={activity.description}
-                  street={activity.street}
-                  city={activity.city}
-                  zipCode={activity.zipCode}
-                  country={activity.country}
-                  openingHours={activity.openingHours}
-                  website={activity.website}
-                  isFreeOfCharge={activity.isFreeOfCharge}
-                  key={activity.id}
-                />
-              ))}
+              {activities
+                .filter(activity => {
+                  if (searchTerm === '') {
+                    return activity
+                  } else if (
+                    activity.name
+                      .toLowerCase()
+                      .includes(searchTerm.toLowerCase()) ||
+                    activity.description
+                      .toLowerCase()
+                      .includes(searchTerm.toLowerCase()) ||
+                    activity.street
+                      .toLowerCase()
+                      .includes(searchTerm.toLowerCase()) ||
+                    activity.city
+                      .toLowerCase()
+                      .includes(searchTerm.toLowerCase()) ||
+                    activity.zipCode
+                      .toLowerCase()
+                      .includes(searchTerm.toLowerCase()) ||
+                    activity.country
+                      .toLowerCase()
+                      .includes(searchTerm.toLowerCase())
+                  ) {
+                    return activity
+                  }
+                })
+                .map(activity => (
+                  <FlipCard
+                    name={activity.name}
+                    description={activity.description}
+                    street={activity.street}
+                    city={activity.city}
+                    zipCode={activity.zipCode}
+                    country={activity.country}
+                    openingHours={activity.openingHours}
+                    website={activity.website}
+                    isFreeOfCharge={activity.isFreeOfCharge}
+                    key={activity.id}
+                  />
+                ))}
             </Route>
             <Route exact path="/create">
               <CreateActivityForm
