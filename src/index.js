@@ -4,11 +4,14 @@ import App from './components/app/App'
 import GlobalStyles from './GlobalStyles'
 import reportWebVitals from './reportWebVitals'
 import data from './data.json'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyles />
-    <App initialActivities={data} />
+    <Router>
+      <GlobalStyles />
+      <App initialActivities={data} />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 )

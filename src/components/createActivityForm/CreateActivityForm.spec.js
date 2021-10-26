@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import CreateActivityForm from './CreateActivityForm'
+import { createMemoryHistory } from 'history'
+import { Router } from 'react-router-dom'
 
 describe('CreateActivityForm', () => {
   it('has ten required input fields', () => {
@@ -66,7 +68,12 @@ describe('CreateActivityForm', () => {
 
   it('works: text written into the input fields will be sent to the onCreateNewActivity function', () => {
     const mockOnCreateNewActivity = jest.fn()
-    render(<CreateActivityForm onCreateNewActivity={mockOnCreateNewActivity} />)
+    const history = createMemoryHistory()
+    render(
+      <Router history={history}>
+        <CreateActivityForm onCreateNewActivity={mockOnCreateNewActivity} />
+      </Router>
+    )
 
     const inputName = screen.getByLabelText('Name of Activity:')
     userEvent.type(inputName, 'Aquazoo Löbbecke Museum')
