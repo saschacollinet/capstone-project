@@ -46,5 +46,41 @@
     "openingHours": "10:00 - 18:00",
     "website": "https://www.duesseldorf.de/aquazoo.html",
     "isFreeOfCharge": false
+  },
+  {
+    "id": 5,
+    "name": "Phantasialand",
+    "description": "Das Phantasialand ist ein Freizeitpark in Brühl bei Köln, Nordrhein-Westfalen.",
+    "street": "Berggeiststraße 31-41",
+    "city": "Brühl",
+    "zipCode": "50321",
+    "country": "Germany",
+    "openingHours": "09:00 - 18:00",
+    "website": "https://www.phantasialand.de/",
+    "isFreeOfCharge": false
+  },
+  {
+    "id": 6,
+    "name": "Disneyland Paris",
+    "description": "Disneyland Paris ist ein 2.230 Hektar großer Freizeitkomplex.",
+    "street": "Bd de Parc",
+    "city": "Coupvray",
+    "zipCode": "77700",
+    "country": "France",
+    "openingHours": "09:00 - 20:00",
+    "website": "https://www.disneylandparis.com/",
+    "isFreeOfCharge": false
+  },
+  {
+    "id": 7,
+    "name": "Zoo Krefeld",
+    "description": "Der Krefelder Zoo beherbergt ca. 1000 Tiere aus rund 170 verschiedenen Arten.",
+    "street": "Uerdinger Str. 377",
+    "city": "Krefeld",
+    "zipCode": "47800",
+    "country": "Germany",
+    "openingHours": "09:00 - 19:00",
+    "website": "https://www.zookrefeld.de/",
+    "isFreeOfCharge": false
   }
 ]
