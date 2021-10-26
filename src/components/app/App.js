@@ -1,9 +1,11 @@
 import Header from '../header/Header'
 import Main from '../main/Main'
-import Home from '../home/Home'
 import Footer from '../footer/Footer'
+import Home from '../home/Home'
 import FlipCard from '../flipCard/FlipCard'
 import CreateActivityForm from '../createActivityForm/CreateActivityForm'
+import loadFromLocal from '../lib/loadFromLocal'
+import saveToLocal from '../lib/saveToLocal'
 import styled from 'styled-components/macro'
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
@@ -11,7 +13,9 @@ import { theme } from '../../theme'
 import { Route, Switch } from 'react-router-dom'
 
 export default function App({ initialActivities }) {
-  const [activities, setActivities] = useState(initialActivities)
+  const [activities, setActivities] = useState(
+    loadFromLocal('localActivities') ?? initialActivities
+  )
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
@@ -52,6 +56,7 @@ export default function App({ initialActivities }) {
   function handleCreateNewActivity(newActivity) {
     const newActivities = [newActivity, ...activities]
     setActivities(newActivities)
+    saveToLocal('localActivities', newActivities)
   }
 }
 
