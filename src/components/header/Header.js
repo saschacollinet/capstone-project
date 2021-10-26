@@ -1,5 +1,6 @@
 import BurgerButton from '../burgerButton/BurgerButton'
 import BurgerMenu from '../burgerMenu/BurgerMenu'
+import SearchBox from '../searchBox/SearchBox'
 import styled from 'styled-components/macro'
 import logo from '../../assets/images/logo.svg'
 import { NavLink } from 'react-router-dom'
@@ -17,6 +18,7 @@ export default function Header() {
           <Logo src={logo} alt="Allaround Family" />
         </NavLink>
       </h1>
+      <SearchBox />
       <div ref={node}>
         <BurgerButton open={open} onClick={() => setOpen(!open)} />
         <BurgerMenu open={open} onClick={() => setOpen(!open)} />
