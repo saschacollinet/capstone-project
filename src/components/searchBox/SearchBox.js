@@ -41,7 +41,6 @@ const Form = styled.form`
 `
 
 const Input = styled.input`
-  box-sizing: border-box;
   width: 2rem;
   height: 2rem;
   border: 4px solid #333333;
@@ -63,7 +62,6 @@ const Input = styled.input`
   ${({ isToggled }) =>
     isToggled &&
     css`
-      box-sizing: border-box;
       padding: 0 40px 0 10px;
       width: 300px;
       height: 2rem;
