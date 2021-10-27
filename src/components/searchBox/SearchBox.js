@@ -13,13 +13,16 @@ export default function SearchBox({ searchTerm, onChange }) {
   return (
     <div ref={node}>
       <Form>
-        <Input
-          type="text"
-          name="input"
-          isToggled={isToggled}
-          value={searchTerm}
-          onChange={onChange}
-        />
+        <label>
+          <ScreenReaderOnly>Search box</ScreenReaderOnly>
+          <Input
+            type="text"
+            name="input"
+            isToggled={isToggled}
+            value={searchTerm}
+            onChange={onChange}
+          />
+        </label>
         <NavLink to="/list">
           <Button isToggled={isToggled} onClick={handleToggled} />
         </NavLink>
@@ -153,4 +156,15 @@ const Button = styled.button`
         transform: rotate(-45deg);
       }
     `}
+`
+
+const ScreenReaderOnly = styled.span`
+  display: inline-block;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
 `
