@@ -10,10 +10,13 @@ describe('Header', () => {
       </Router>
     )
 
-    const link = screen.getByRole('link')
-    expect(link).toBeInTheDocument()
+    const links = screen.getAllByRole('link')
+    expect(links).toHaveLength(5)
 
     const logo = screen.getByAltText('Allaround Family')
     expect(logo).toBeInTheDocument()
+
+    const buttons = screen.getAllByRole('button')
+    expect(buttons).toHaveLength(2)
   })
 })
