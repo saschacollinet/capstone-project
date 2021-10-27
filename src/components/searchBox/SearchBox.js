@@ -34,19 +34,20 @@ export default function SearchBox({ searchTerm, onChange }) {
 const Form = styled.form`
   position: fixed;
   height: 2rem;
-  width: 300px;
+  width: 265px;
   top: 1.5rem;
   right: 1.5rem;
-  transform: translateX(298px);
+  transform: translateX(263px);
 `
 
 const Input = styled.input`
   width: 2rem;
   height: 2rem;
   border: 4px solid #333333;
+  padding: 0.25rem;
   border-radius: 50%;
   background: none;
-  color: transparent;
+  color: #333;
   font-size: 16px;
   font-weight: 400;
   outline: 0;
@@ -63,11 +64,11 @@ const Input = styled.input`
     isToggled &&
     css`
       padding: 0 40px 0 10px;
-      width: 300px;
+      width: 265px;
       height: 2rem;
       border: 4px solid #333333;
       border-radius: 25px;
-      background-color: rgba(255, 255, 255, 0.7);
+      background-color: none;
       color: #333;
       font-size: 16px;
       font-weight: 400;
@@ -106,7 +107,7 @@ const Button = styled.button`
     content: '';
     position: absolute;
     width: 0.8rem;
-    height: 0.16rem;
+    height: 0.25rem;
     border-radius: 10px;
     background-color: #333;
     -webkit-transform: rotate(45deg);
@@ -128,7 +129,7 @@ const Button = styled.button`
         content: '';
         position: absolute;
         width: 1.08rem;
-        height: 0.16rem;
+        height: 0.25rem;
         border-radius: 10px;
         margin-top: -0.04rem;
         margin-left: -0.52rem;
@@ -143,7 +144,7 @@ const Button = styled.button`
         content: '';
         position: absolute;
         width: 1.08rem;
-        height: 0.16rem;
+        height: 0.25rem;
         border-radius: 10px;
         background-color: #333;
         margin-top: -0.04rem;
