@@ -7,16 +7,24 @@ import CreateActivityForm from '../createActivityForm/CreateActivityForm'
 import loadFromLocal from '../lib/loadFromLocal'
 import saveToLocal from '../lib/saveToLocal'
 import styled from 'styled-components/macro'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { theme } from '../../theme'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, useLocation } from 'react-router-dom'
 
 export default function App({ initialActivities }) {
   const [activities, setActivities] = useState(
     loadFromLocal('localActivities') ?? initialActivities
   )
   const [searchTerm, setSearchTerm] = useState('')
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.pathname !== '/list') {
+      setSearchTerm('')
+    }
+  }, [location.pathname])
+
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>

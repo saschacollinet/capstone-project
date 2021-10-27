@@ -17,7 +17,7 @@ export default function SearchBox({ searchTerm, onChange }) {
           type="text"
           name="input"
           isToggled={isToggled}
-          searchTerm={searchTerm}
+          value={searchTerm}
           onChange={onChange}
         />
         <NavLink to="/list">
