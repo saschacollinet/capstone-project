@@ -6,6 +6,7 @@ import FlipCard from '../flipCard/FlipCard'
 import CreateActivityForm from '../createActivityForm/CreateActivityForm'
 import loadFromLocal from '../lib/loadFromLocal'
 import saveToLocal from '../lib/saveToLocal'
+import filterActivities from '../lib/filterActivities'
 import styled from 'styled-components/macro'
 import { useState, useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
@@ -25,6 +26,9 @@ export default function App({ initialActivities }) {
     }
   }, [location.pathname])
 
+  const filteredActivities =
+    filterActivities(activities, searchTerm) || activities
+
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
@@ -40,47 +44,20 @@ export default function App({ initialActivities }) {
               <Home />
             </Route>
             <Route exact path="/list">
-              {activities
-                .filter(activity => {
-                  if (searchTerm === '') {
-                    return activity
-                  } else if (
-                    activity.name
-                      .toLowerCase()
-                      .includes(searchTerm.toLowerCase()) ||
-                    activity.description
-                      .toLowerCase()
-                      .includes(searchTerm.toLowerCase()) ||
-                    activity.street
-                      .toLowerCase()
-                      .includes(searchTerm.toLowerCase()) ||
-                    activity.city
-                      .toLowerCase()
-                      .includes(searchTerm.toLowerCase()) ||
-                    activity.zipCode
-                      .toLowerCase()
-                      .includes(searchTerm.toLowerCase()) ||
-                    activity.country
-                      .toLowerCase()
-                      .includes(searchTerm.toLowerCase())
-                  ) {
-                    return activity
-                  }
-                })
-                .map(activity => (
-                  <FlipCard
-                    name={activity.name}
-                    description={activity.description}
-                    street={activity.street}
-                    city={activity.city}
-                    zipCode={activity.zipCode}
-                    country={activity.country}
-                    openingHours={activity.openingHours}
-                    website={activity.website}
-                    isFreeOfCharge={activity.isFreeOfCharge}
-                    key={activity.id}
-                  />
-                ))}
+              {filteredActivities.map(activity => (
+                <FlipCard
+                  name={activity.name}
+                  description={activity.description}
+                  street={activity.street}
+                  city={activity.city}
+                  zipCode={activity.zipCode}
+                  country={activity.country}
+                  openingHours={activity.openingHours}
+                  website={activity.website}
+                  isFreeOfCharge={activity.isFreeOfCharge}
+                  key={activity.id}
+                />
+              ))}
             </Route>
             <Route exact path="/create">
               <CreateActivityForm
