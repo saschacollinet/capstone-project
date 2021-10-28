@@ -68,7 +68,7 @@ const Input = styled.input`
       height: 2rem;
       border: 4px solid #333333;
       border-radius: 25px;
-      background-color: none;
+      background: none;
       color: #333;
       font-size: 16px;
       font-weight: 400;
@@ -88,7 +88,7 @@ const Input = styled.input`
 const Button = styled.button`
   background: none;
   position: absolute;
-  top: 0px;
+  top: 0;
   left: 0;
   height: 2rem;
   width: 2rem;
