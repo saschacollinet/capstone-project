@@ -1,11 +1,12 @@
 export default function filterActivities(activities, searchTerm) {
+  const lowerSearchTerm = searchTerm.toLowerCase()
   return activities.filter(
     activity =>
-      activity.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      activity.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      activity.street.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      activity.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      activity.zipCode.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      activity.country.toLowerCase().includes(searchTerm.toLowerCase())
+      activity.name.toLowerCase().includes(lowerSearchTerm) ||
+      activity.description.toLowerCase().includes(lowerSearchTerm) ||
+      activity.street.toLowerCase().includes(lowerSearchTerm) ||
+      activity.city.toLowerCase().includes(lowerSearchTerm) ||
+      activity.zipCode.toLowerCase().includes(lowerSearchTerm) ||
+      activity.country.toLowerCase().includes(lowerSearchTerm)
   )
 }
