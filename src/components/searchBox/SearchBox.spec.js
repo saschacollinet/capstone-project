@@ -13,8 +13,8 @@ describe('SearchBox', () => {
       </Router>
     )
 
-    const link = screen.getByRole('link')
-    expect(link).toBeInTheDocument()
+    const inputEl = screen.getByLabelText('Search box')
+    expect(inputEl).toBeInTheDocument()
 
     const button = screen.getByRole('button')
     expect(button).toBeInTheDocument()
