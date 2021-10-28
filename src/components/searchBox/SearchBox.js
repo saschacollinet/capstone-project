@@ -1,18 +1,24 @@
 import styled, { css } from 'styled-components/macro'
 import { useState, useRef } from 'react'
-import { NavLink } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import useClickOutside from '../hooks/useClickOutside'
 
 export default function SearchBox({ searchTerm, onChange }) {
   const [isToggled, setIsToggled] = useState(false)
-  function handleToggled() {
-    setIsToggled(!isToggled)
-  }
   const node = useRef()
+  const history = useHistory()
+
   useClickOutside(node, () => setIsToggled(false))
+
+  function handleSubmit(event) {
+    event.preventDefault()
+    setIsToggled(!isToggled)
+    history.push('/list')
+  }
+
   return (
     <div ref={node}>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <label>
           <ScreenReaderOnly>Search box</ScreenReaderOnly>
           <Input
@@ -23,9 +29,7 @@ export default function SearchBox({ searchTerm, onChange }) {
             onChange={onChange}
           />
         </label>
-        <NavLink to="/list">
-          <Button isToggled={isToggled} onClick={handleToggled} />
-        </NavLink>
+        <Button isToggled={isToggled} />
       </Form>
     </div>
   )
