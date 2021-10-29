@@ -1,6 +1,6 @@
-import { render, screen } from '@testing-library/react'
-import { BrowserRouter as Router } from 'react-router-dom'
 import BurgerMenu from './BurgerMenu'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { render, screen } from '@testing-library/react'
 
 describe('BurgerMenu', () => {
   it('renders', () => {
