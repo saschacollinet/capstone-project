@@ -91,6 +91,7 @@ export default function CreateActivityForm({ onCreateNewActivity }) {
       openingHours: openingHours.value,
       website: website.value,
       isFreeOfCharge: JSON.parse(isFreeOfCharge.value),
+      isBookmarked: false,
     })
     form.reset()
     history.push('/list')
