@@ -1,6 +1,6 @@
 import mainBackground from '../../assets/images/mainBackground.jpg'
 import styled from 'styled-components/macro'
-import useScrollToTop from '../hooks/useScrollToTop'
+import useScrollToTop from '../../hooks/useScrollToTop'
 
 export default function Main({ children }) {
   useScrollToTop()
