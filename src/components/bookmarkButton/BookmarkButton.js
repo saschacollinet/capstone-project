@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components/macro'
 import bookmarkMultiple from '../../assets/images/bookmark-multiple.svg'
 import bookmarkMultipleOutline from '../../assets/images/bookmark-multiple-outline.svg'
+import styled, { css } from 'styled-components/macro'
 
 export default function BookmarkButton({ id, isBookmarked, onClickBookmark }) {
   return (
@@ -23,6 +23,7 @@ const Button = styled.button`
   cursor: pointer;
   width: 30px;
   height: 30px;
+
   ${({ isBookmarked }) =>
     isBookmarked &&
     css`
