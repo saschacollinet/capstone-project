@@ -10,6 +10,9 @@ export default function Menu({ open, onClick }) {
       <StyledLink to="/list" onClick={onClick}>
         Activity List
       </StyledLink>
+      <StyledLink to="/bookmarks" onClick={onClick}>
+        Bookmarks
+      </StyledLink>
       <StyledLink to="/create" onClick={onClick}>
         Add Activity
       </StyledLink>
