@@ -2,7 +2,7 @@ import Header from '../header/Header'
 import Main from '../main/Main'
 import Footer from '../footer/Footer'
 import Home from '../home/Home'
-import FlipCard from '../flipCard/FlipCard'
+import ActivitiesList from '../ActivitiesList/ActivitiesList'
 import CreateActivityForm from '../createActivityForm/CreateActivityForm'
 import loadFromLocal from '../lib/loadFromLocal'
 import saveToLocal from '../lib/saveToLocal'
@@ -29,6 +29,25 @@ export default function App({ initialActivities }) {
   const filteredActivities =
     filterActivities(activities, searchTerm) || activities
 
+  function handleBookmark(id) {
+    const activity = activities.find(card => card.id === id)
+    const indexActivities = activities.findIndex(card => card.id === id)
+    const newActivities = [
+      ...activities.slice(0, indexActivities),
+      {
+        ...activity,
+        isBookmarked: !activity.isBookmarked,
+      },
+      ...activities.slice(indexActivities + 1),
+    ]
+    setActivities(newActivities)
+    saveToLocal('localActivities', newActivities)
+  }
+
+  const bookmarkedActivities = activities.filter(
+    activity => activity.isBookmarked === true
+  )
+
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
@@ -44,20 +63,16 @@ export default function App({ initialActivities }) {
               <Home />
             </Route>
             <Route exact path="/list">
-              {filteredActivities.map(activity => (
-                <FlipCard
-                  name={activity.name}
-                  description={activity.description}
-                  street={activity.street}
-                  city={activity.city}
-                  zipCode={activity.zipCode}
-                  country={activity.country}
-                  openingHours={activity.openingHours}
-                  website={activity.website}
-                  isFreeOfCharge={activity.isFreeOfCharge}
-                  key={activity.id}
-                />
-              ))}
+              <ActivitiesList
+                activities={filteredActivities}
+                onClickBookmark={handleBookmark}
+              />
+            </Route>
+            <Route exact path="/bookmarks">
+              <ActivitiesList
+                activities={bookmarkedActivities}
+                onClickBookmark={handleBookmark}
+              />
             </Route>
             <Route exact path="/create">
               <CreateActivityForm
