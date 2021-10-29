@@ -11,7 +11,7 @@ export default function BookmarkButton({ id, isBookmarked, onClickBookmark }) {
 const Button = styled.button`
   position: absolute;
   top: -7px;
-  right: 15px;
+  right: 5px;
   background-image: url(${bookmarkMultipleOutline});
   background-color: transparent;
   background-repeat: no-repeat;
