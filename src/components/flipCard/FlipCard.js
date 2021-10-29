@@ -1,8 +1,10 @@
 import styled, { css } from 'styled-components/macro'
 import { useState } from 'react'
 import mainBackground from '../../assets/images/mainBackground.jpg'
+import BookmarkButton from '../bookmarkButton/BookmarkButton'
 
 export default function FlipCard({
+  id,
   name,
   description,
   street,
@@ -12,6 +14,8 @@ export default function FlipCard({
   openingHours,
   website,
   isFreeOfCharge,
+  isBookmarked,
+  onClickBookmark,
 }) {
   const [isCardFlipped, setIsCardFlipped] = useState(false)
   const handleFlipCardClick = () => {
@@ -21,10 +25,20 @@ export default function FlipCard({
     <Card onClick={handleFlipCardClick}>
       <CardContent isCardFlipped={isCardFlipped}>
         <CardFront>
+          <BookmarkButton
+            id={id}
+            isBookmarked={isBookmarked}
+            onClickBookmark={onClickBookmark}
+          />
           <CardTitle>{name}</CardTitle>
           <CardSubtitle>{city}</CardSubtitle>
         </CardFront>
         <CardBack>
+          <BookmarkButton
+            id={id}
+            isBookmarked={isBookmarked}
+            onClickBookmark={onClickBookmark}
+          />
           <CardBody>
             <p>
               <b>Name:</b> {name}
