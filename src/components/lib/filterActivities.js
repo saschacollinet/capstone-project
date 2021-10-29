@@ -1,5 +1,6 @@
 export default function filterActivities(activities, searchTerm) {
   const lowerSearchTerm = searchTerm.toLowerCase()
+
   return activities.filter(
     activity =>
       activity.name.toLowerCase().includes(lowerSearchTerm) ||

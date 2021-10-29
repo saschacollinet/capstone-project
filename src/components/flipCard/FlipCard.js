@@ -18,9 +18,11 @@ export default function FlipCard({
   onClickBookmark,
 }) {
   const [isCardFlipped, setIsCardFlipped] = useState(false)
+
   const handleFlipCardClick = () => {
     setIsCardFlipped(!isCardFlipped)
   }
+
   return (
     <Card onClick={handleFlipCardClick}>
       <CardContent isCardFlipped={isCardFlipped}>
@@ -85,6 +87,7 @@ const CardContent = styled.div`
   padding: 15em 5em;
   transition: transform 2s;
   transform-style: preserve-3d;
+
   ${({ isCardFlipped }) =>
     isCardFlipped &&
     css`
@@ -118,6 +121,7 @@ const CardSide = styled.div`
 
 const CardFront = styled(CardSide)`
   padding: 5em 2em;
+
   &::before {
     content: '';
     position: absolute;

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components/macro'
-import bookmarkMultipleOutline from '../../assets/images/bookmark-multiple-outline.svg'
 import bookmarkMultiple from '../../assets/images/bookmark-multiple.svg'
+import bookmarkMultipleOutline from '../../assets/images/bookmark-multiple-outline.svg'
 
 export default function BookmarkButton({ id, isBookmarked, onClickBookmark }) {
   return (

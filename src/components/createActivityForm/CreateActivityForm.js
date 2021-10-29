@@ -1,5 +1,5 @@
-import { nanoid } from 'nanoid'
 import styled from 'styled-components'
+import { nanoid } from 'nanoid'
 import { useState } from 'react'
 import { useHistory } from 'react-router'
 
@@ -69,7 +69,9 @@ export default function CreateActivityForm({ onCreateNewActivity }) {
 
   function handleSubmit(event) {
     event.preventDefault()
+
     const form = event.target
+
     const {
       name,
       description,
@@ -95,7 +97,9 @@ export default function CreateActivityForm({ onCreateNewActivity }) {
       isFreeOfCharge: JSON.parse(isFreeOfCharge.value),
       isBookmarked: false,
     })
+
     form.reset()
+
     history.push('/list')
   }
 }
