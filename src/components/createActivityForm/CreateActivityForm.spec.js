@@ -122,6 +122,7 @@ describe('CreateActivityForm', () => {
       openingHours: '10:00 - 18:00',
       website: 'https://www.duesseldorf.de/aquazoo.html',
       isFreeOfCharge: true,
+      isBookmarked: false,
     })
   })
 })

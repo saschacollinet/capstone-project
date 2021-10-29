@@ -11,7 +11,7 @@ describe('BurgerMenu', () => {
     )
 
     const navLinks = screen.getAllByRole('link')
-    expect(navLinks).toHaveLength(3)
+    expect(navLinks).toHaveLength(4)
   })
 
   it('displays the text', () => {
@@ -24,8 +24,11 @@ describe('BurgerMenu', () => {
     const home = screen.getByText('Home')
     expect(home).toBeInTheDocument()
 
-    const activityList = screen.getByText('Activity List')
-    expect(activityList).toBeInTheDocument()
+    const activities = screen.getByText('Activities')
+    expect(activities).toBeInTheDocument()
+
+    const bookmarks = screen.getByText('Bookmarks')
+    expect(bookmarks).toBeInTheDocument()
 
     const addActivity = screen.getByText('Add Activity')
     expect(addActivity).toBeInTheDocument()
