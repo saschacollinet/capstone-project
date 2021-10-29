@@ -5,7 +5,9 @@ import { useHistory } from 'react-router'
 
 export default function CreateActivityForm({ onCreateNewActivity }) {
   const [characterCount, setCharacterCount] = useState(0)
+
   const history = useHistory()
+
   return (
     <Form onSubmit={handleSubmit}>
       <Label>
