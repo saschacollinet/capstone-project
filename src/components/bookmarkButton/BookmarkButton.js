@@ -4,7 +4,10 @@ import bookmarkMultipleOutline from '../../assets/images/bookmark-multiple-outli
 
 export default function BookmarkButton({ id, isBookmarked, onClickBookmark }) {
   return (
-    <Button isBookmarked={isBookmarked} onClick={() => onClickBookmark(id)} />
+    <Button
+      isBookmarked={isBookmarked}
+      onClick={event => onClickBookmark(event, id)}
+    />
   )
 }
 

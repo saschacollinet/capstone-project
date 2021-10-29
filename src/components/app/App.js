@@ -73,9 +73,13 @@ export default function App({ initialActivities }) {
     </ThemeProvider>
   )
 
-  function handleBookmark(id) {
+  function handleBookmark(event, id) {
+    event.stopPropagation()
+
     const activity = activities.find(card => card.id === id)
+
     const indexActivities = activities.findIndex(card => card.id === id)
+
     const newActivities = [
       ...activities.slice(0, indexActivities),
       {
@@ -84,13 +88,17 @@ export default function App({ initialActivities }) {
       },
       ...activities.slice(indexActivities + 1),
     ]
+
     setActivities(newActivities)
+
     saveToLocal('localActivities', newActivities)
   }
 
   function handleCreateNewActivity(newActivity) {
     const newActivities = [newActivity, ...activities]
+
     setActivities(newActivities)
+
     saveToLocal('localActivities', newActivities)
   }
 }
