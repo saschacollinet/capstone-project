@@ -8,16 +8,18 @@ import loadFromLocal from '../lib/loadFromLocal'
 import saveToLocal from '../lib/saveToLocal'
 import filterActivities from '../lib/filterActivities'
 import styled from 'styled-components/macro'
-import { useState, useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { theme } from '../../theme'
+import { useState, useEffect } from 'react'
 import { Route, Switch, useLocation } from 'react-router-dom'
 
 export default function App({ initialActivities }) {
   const [activities, setActivities] = useState(
     loadFromLocal('localActivities') ?? initialActivities
   )
+
   const [searchTerm, setSearchTerm] = useState('')
+
   const location = useLocation()
 
   useEffect(() => {
@@ -28,21 +30,6 @@ export default function App({ initialActivities }) {
 
   const filteredActivities =
     filterActivities(activities, searchTerm) || activities
-
-  function handleBookmark(id) {
-    const activity = activities.find(card => card.id === id)
-    const indexActivities = activities.findIndex(card => card.id === id)
-    const newActivities = [
-      ...activities.slice(0, indexActivities),
-      {
-        ...activity,
-        isBookmarked: !activity.isBookmarked,
-      },
-      ...activities.slice(indexActivities + 1),
-    ]
-    setActivities(newActivities)
-    saveToLocal('localActivities', newActivities)
-  }
 
   const bookmarkedActivities = activities.filter(
     activity => activity.isBookmarked === true
@@ -85,6 +72,21 @@ export default function App({ initialActivities }) {
       </Wrapper>
     </ThemeProvider>
   )
+
+  function handleBookmark(id) {
+    const activity = activities.find(card => card.id === id)
+    const indexActivities = activities.findIndex(card => card.id === id)
+    const newActivities = [
+      ...activities.slice(0, indexActivities),
+      {
+        ...activity,
+        isBookmarked: !activity.isBookmarked,
+      },
+      ...activities.slice(indexActivities + 1),
+    ]
+    setActivities(newActivities)
+    saveToLocal('localActivities', newActivities)
+  }
 
   function handleCreateNewActivity(newActivity) {
     const newActivities = [newActivity, ...activities]
