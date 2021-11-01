@@ -28,6 +28,10 @@ export default function App({ initialActivities }) {
     }
   }, [location.pathname])
 
+  useEffect(() => {
+    saveToLocal('localActivities', activities)
+  }, [activities])
+
   const filteredActivities =
     filterActivities(activities, searchTerm) || activities
 
@@ -90,16 +94,12 @@ export default function App({ initialActivities }) {
     ]
 
     setActivities(newActivities)
-
-    saveToLocal('localActivities', newActivities)
   }
 
   function handleCreateNewActivity(newActivity) {
     const newActivities = [newActivity, ...activities]
 
     setActivities(newActivities)
-
-    saveToLocal('localActivities', newActivities)
   }
 }
 
