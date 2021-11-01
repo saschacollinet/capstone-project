@@ -13,6 +13,9 @@ export default function Menu({ open, onClick }) {
       <StyledLink to="/bookmarks" onClick={onClick}>
         Bookmarks
       </StyledLink>
+      <StyledLink to="/map" onClick={onClick}>
+        Map
+      </StyledLink>
       <StyledLink to="/create" onClick={onClick}>
         Add Activity
       </StyledLink>
