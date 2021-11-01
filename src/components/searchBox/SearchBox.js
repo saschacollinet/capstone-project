@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components/macro'
 import { useState, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
-import useClickOutside from '../hooks/useClickOutside'
+import useClickOutside from '../../hooks/useClickOutside'
 
 export default function SearchBox({ searchTerm, onChange }) {
   const [isToggled, setIsToggled] = useState(false)

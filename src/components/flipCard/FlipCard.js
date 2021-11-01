@@ -1,8 +1,10 @@
 import styled, { css } from 'styled-components/macro'
 import { useState } from 'react'
 import mainBackground from '../../assets/images/mainBackground.jpg'
+import BookmarkButton from '../bookmarkButton/BookmarkButton'
 
 export default function FlipCard({
+  id,
   name,
   description,
   street,
@@ -12,19 +14,33 @@ export default function FlipCard({
   openingHours,
   website,
   isFreeOfCharge,
+  isBookmarked,
+  onClickBookmark,
 }) {
   const [isCardFlipped, setIsCardFlipped] = useState(false)
+
   const handleFlipCardClick = () => {
     setIsCardFlipped(!isCardFlipped)
   }
+
   return (
     <Card onClick={handleFlipCardClick}>
       <CardContent isCardFlipped={isCardFlipped}>
         <CardFront>
+          <BookmarkButton
+            id={id}
+            isBookmarked={isBookmarked}
+            onClickBookmark={onClickBookmark}
+          />
           <CardTitle>{name}</CardTitle>
           <CardSubtitle>{city}</CardSubtitle>
         </CardFront>
         <CardBack>
+          <BookmarkButton
+            id={id}
+            isBookmarked={isBookmarked}
+            onClickBookmark={onClickBookmark}
+          />
           <CardBody>
             <p>
               <b>Name:</b> {name}
@@ -71,6 +87,7 @@ const CardContent = styled.div`
   padding: 15em 5em;
   transition: transform 2s;
   transform-style: preserve-3d;
+
   ${({ isCardFlipped }) =>
     isCardFlipped &&
     css`
@@ -104,6 +121,7 @@ const CardSide = styled.div`
 
 const CardFront = styled(CardSide)`
   padding: 5em 2em;
+
   &::before {
     content: '';
     position: absolute;
