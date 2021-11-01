@@ -23,8 +23,7 @@ export default function Map() {
 const Wrapper = styled.div`
   height: 80vh;
   width: 90vw;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 25px;
-  overflow: hidden;
   padding: 10px;
 `
