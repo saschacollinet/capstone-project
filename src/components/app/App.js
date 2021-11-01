@@ -4,6 +4,7 @@ import Footer from '../footer/Footer'
 import Home from '../home/Home'
 import FlipCard from '../flipCard/FlipCard'
 import CreateActivityForm from '../createActivityForm/CreateActivityForm'
+import Map from '../Map/Map'
 import loadFromLocal from '../lib/loadFromLocal'
 import saveToLocal from '../lib/saveToLocal'
 import filterActivities from '../lib/filterActivities'
@@ -63,6 +64,9 @@ export default function App({ initialActivities }) {
               <CreateActivityForm
                 onCreateNewActivity={handleCreateNewActivity}
               />
+            </Route>
+            <Route exact path="/map">
+              <Map />
             </Route>
           </Switch>
         </Main>
