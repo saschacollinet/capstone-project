@@ -1,9 +1,9 @@
-import Oops from './Oops'
+import ErrorMessage from './ErrorMessage'
 import { render, screen } from '@testing-library/react'
 
-describe('Oops', () => {
+describe('ErrorMessage', () => {
   it('renders', () => {
-    render(<Oops />)
+    render(<ErrorMessage />)
 
     const headings = screen.getAllByRole('heading')
 
@@ -11,7 +11,7 @@ describe('Oops', () => {
   })
 
   it('displays the text', () => {
-    render(<Oops />)
+    render(<ErrorMessage />)
 
     const oopsHeading = screen.getByText('Oops!')
     expect(oopsHeading).toBeInTheDocument()
