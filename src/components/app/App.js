@@ -78,15 +78,15 @@ export default function App({ initialActivities }) {
 
     const activity = activities.find(card => card.id === id)
 
-    const indexActivities = activities.findIndex(card => card.id === id)
+    const index = activities.findIndex(card => card.id === id)
 
     const newActivities = [
-      ...activities.slice(0, indexActivities),
+      ...activities.slice(0, index),
       {
         ...activity,
         isBookmarked: !activity.isBookmarked,
       },
-      ...activities.slice(indexActivities + 1),
+      ...activities.slice(index + 1),
     ]
 
     setActivities(newActivities)
