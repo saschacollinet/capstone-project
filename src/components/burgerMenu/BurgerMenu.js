@@ -8,7 +8,10 @@ export default function Menu({ open, onClick }) {
         Home
       </StyledLink>
       <StyledLink to="/list" onClick={onClick}>
-        Activity List
+        Activities
+      </StyledLink>
+      <StyledLink to="/bookmarks" onClick={onClick}>
+        Bookmarks
       </StyledLink>
       <StyledLink to="/create" onClick={onClick}>
         Add Activity

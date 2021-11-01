@@ -2,22 +2,24 @@ import Header from '../header/Header'
 import Main from '../main/Main'
 import Footer from '../footer/Footer'
 import Home from '../home/Home'
-import FlipCard from '../flipCard/FlipCard'
+import ActivitiesList from '../ActivitiesList/ActivitiesList'
 import CreateActivityForm from '../createActivityForm/CreateActivityForm'
-import loadFromLocal from '../lib/loadFromLocal'
-import saveToLocal from '../lib/saveToLocal'
-import filterActivities from '../lib/filterActivities'
+import loadFromLocal from '../../lib/loadFromLocal'
+import saveToLocal from '../../lib/saveToLocal'
+import filterActivities from '../../utils/filterActivities'
 import styled from 'styled-components/macro'
-import { useState, useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { theme } from '../../theme'
+import { useState, useEffect } from 'react'
 import { Route, Switch, useLocation } from 'react-router-dom'
 
 export default function App({ initialActivities }) {
   const [activities, setActivities] = useState(
     loadFromLocal('localActivities') ?? initialActivities
   )
+
   const [searchTerm, setSearchTerm] = useState('')
+
   const location = useLocation()
 
   useEffect(() => {
@@ -26,8 +28,16 @@ export default function App({ initialActivities }) {
     }
   }, [location.pathname])
 
+  useEffect(() => {
+    saveToLocal('localActivities', activities)
+  }, [activities])
+
   const filteredActivities =
     filterActivities(activities, searchTerm) || activities
+
+  const bookmarkedActivities = activities.filter(
+    activity => activity.isBookmarked === true
+  )
 
   return (
     <ThemeProvider theme={theme}>
@@ -44,20 +54,16 @@ export default function App({ initialActivities }) {
               <Home />
             </Route>
             <Route exact path="/list">
-              {filteredActivities.map(activity => (
-                <FlipCard
-                  name={activity.name}
-                  description={activity.description}
-                  street={activity.street}
-                  city={activity.city}
-                  zipCode={activity.zipCode}
-                  country={activity.country}
-                  openingHours={activity.openingHours}
-                  website={activity.website}
-                  isFreeOfCharge={activity.isFreeOfCharge}
-                  key={activity.id}
-                />
-              ))}
+              <ActivitiesList
+                activities={filteredActivities}
+                onClickBookmark={handleBookmark}
+              />
+            </Route>
+            <Route exact path="/bookmarks">
+              <ActivitiesList
+                activities={bookmarkedActivities}
+                onClickBookmark={handleBookmark}
+              />
             </Route>
             <Route exact path="/create">
               <CreateActivityForm
@@ -71,10 +77,29 @@ export default function App({ initialActivities }) {
     </ThemeProvider>
   )
 
+  function handleBookmark(event, id) {
+    event.stopPropagation()
+
+    const activity = activities.find(card => card.id === id)
+
+    const index = activities.findIndex(card => card.id === id)
+
+    const newActivities = [
+      ...activities.slice(0, index),
+      {
+        ...activity,
+        isBookmarked: !activity.isBookmarked,
+      },
+      ...activities.slice(index + 1),
+    ]
+
+    setActivities(newActivities)
+  }
+
   function handleCreateNewActivity(newActivity) {
     const newActivities = [newActivity, ...activities]
+
     setActivities(newActivities)
-    saveToLocal('localActivities', newActivities)
   }
 }
 

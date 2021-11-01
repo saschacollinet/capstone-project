@@ -9,7 +9,8 @@
     "country": "Germany",
     "openingHours": "09:00 - 18:00",
     "website": "https://natur-und-tierpark-brueggen.de",
-    "isFreeOfCharge": false
+    "isFreeOfCharge": false,
+    "isBookmarked": false
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
     "country": "Netherlands",
     "openingHours": "10:00 - 18:00",
     "website": "https://www.efteling.com/",
-    "isFreeOfCharge": false
+    "isFreeOfCharge": false,
+    "isBookmarked": false
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
     "country": "Germany",
     "openingHours": "permanent",
     "website": "https://buntergarten.de/",
-    "isFreeOfCharge": true
+    "isFreeOfCharge": true,
+    "isBookmarked": false
   },
   {
     "id": 4,
@@ -45,7 +48,8 @@
     "country": "Germany",
     "openingHours": "10:00 - 18:00",
     "website": "https://www.duesseldorf.de/aquazoo.html",
-    "isFreeOfCharge": false
+    "isFreeOfCharge": false,
+    "isBookmarked": false
   },
   {
     "id": 5,
@@ -57,7 +61,8 @@
     "country": "Germany",
     "openingHours": "09:00 - 18:00",
     "website": "https://www.phantasialand.de/",
-    "isFreeOfCharge": false
+    "isFreeOfCharge": false,
+    "isBookmarked": false
   },
   {
     "id": 6,
@@ -69,7 +74,8 @@
     "country": "France",
     "openingHours": "09:00 - 20:00",
     "website": "https://www.disneylandparis.com/",
-    "isFreeOfCharge": false
+    "isFreeOfCharge": false,
+    "isBookmarked": false
   },
   {
     "id": 7,
@@ -81,6 +87,7 @@
     "country": "Germany",
     "openingHours": "09:00 - 19:00",
     "website": "https://www.zookrefeld.de/",
-    "isFreeOfCharge": false
+    "isFreeOfCharge": false,
+    "isBookmarked": false
   }
 ]
