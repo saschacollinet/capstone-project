@@ -1,21 +1,40 @@
 import GoogleMapReact from 'google-map-react'
 import styled from 'styled-components/macro'
+import MapBox from '../MapBox/MapBox'
 
-export default function Map() {
-  const coordinates = { lat: 51.285843, lng: 6.36772 }
-
+export default function Map({ activities, coords, onClickBookmark }) {
   return (
     <Wrapper>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: 'AIzaSyCc3e9KfgsjelPHuicG-oaXj7e22xPIzbU' }}
-        defaultCenter={coordinates}
-        center={coordinates}
+        bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
+        defaultCenter={coords}
+        center={coords}
         defaultZoom={10}
         margin={[50, 50, 50, 50]}
         options={''}
         onChange={''}
         onChildClick={''}
-      ></GoogleMapReact>
+      >
+        {activities.map(activity => (
+          <MapBox
+            id={activity.id}
+            name={activity.name}
+            description={activity.description}
+            street={activity.street}
+            city={activity.city}
+            zipCode={activity.zipCode}
+            country={activity.country}
+            lat={activity.lat}
+            lng={activity.lng}
+            openingHours={activity.openingHours}
+            website={activity.website}
+            isFreeOfCharge={activity.isFreeOfCharge}
+            isBookmarked={activity.isBookmarked}
+            key={activity.id}
+            onClickBookmark={onClickBookmark}
+          />
+        ))}
+      </GoogleMapReact>
     </Wrapper>
   )
 }
