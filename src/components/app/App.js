@@ -21,6 +21,8 @@ export default function App({ initialActivities }) {
 
   const [searchTerm, setSearchTerm] = useState('')
 
+  const [coords, setCoords] = useState({})
+
   const location = useLocation()
 
   useEffect(() => {
@@ -32,6 +34,14 @@ export default function App({ initialActivities }) {
   useEffect(() => {
     saveToLocal('localActivities', activities)
   }, [activities])
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      ({ coords: { latitude, longitude } }) => {
+        setCoords({ lat: latitude, lng: longitude })
+      }
+    )
+  }, [])
 
   const filteredActivities =
     filterActivities(activities, searchTerm) || activities
@@ -72,7 +82,11 @@ export default function App({ initialActivities }) {
               />
             </Route>
             <Route exact path="/map">
-              <Map />
+              <Map
+                activities={activities}
+                coords={coords}
+                onClickBookmark={handleBookmark}
+              />
             </Route>
           </Switch>
         </Main>
