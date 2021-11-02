@@ -9,7 +9,7 @@ export default function Map({ activities, coords, onClickBookmark }) {
         bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
         defaultCenter={coords}
         center={coords}
-        defaultZoom={10}
+        defaultZoom={13}
         margin={[50, 50, 50, 50]}
         options={''}
         onChange={''}
