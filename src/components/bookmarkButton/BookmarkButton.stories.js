@@ -4,13 +4,16 @@ import { action } from '@storybook/addon-actions'
 export default {
   title: 'Component/BookmarkButton',
   component: BookmarkButton,
+  parameters: {
+    layout: 'centered',
+  },
 }
 
 const Template = args => <BookmarkButton {...args} />
 
-export const Bookmark = Template.bind({})
+export const Button = Template.bind({})
 
-Bookmark.args = {
+Button.args = {
   onClickBookmark: action(bookmark => console.log(bookmark)),
   isBookmarked: false,
 }

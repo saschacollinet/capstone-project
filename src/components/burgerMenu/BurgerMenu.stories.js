@@ -11,6 +11,6 @@ const Template = args => <BurgerMenu {...args} />
 export const Menu = Template.bind({})
 
 Menu.args = {
-  onClick: action(menu => console.log(menu)),
-  open: false,
+  onClick: action(navigate => console.log(navigate)),
+  open: true,
 }

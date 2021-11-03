@@ -7,4 +7,4 @@ export default {
 
 const Template = args => <ErrorMessage />
 
-export const Message = Template.bind({})
+export const Text = Template.bind({})

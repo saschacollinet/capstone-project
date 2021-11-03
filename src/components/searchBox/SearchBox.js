@@ -29,7 +29,7 @@ export default function SearchBox({ searchTerm, onChange }) {
             onChange={onChange}
           />
         </label>
-        <Button isToggled={isToggled} />
+        <Button isToggled={isToggled} aria-label="Toggle search box" />
       </Form>
     </div>
   )

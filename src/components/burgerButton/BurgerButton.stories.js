@@ -4,13 +4,16 @@ import { action } from '@storybook/addon-actions'
 export default {
   title: 'Component/BurgerButton',
   component: BurgerButton,
+  parameters: {
+    layout: 'centered',
+  },
 }
 
 const Template = args => <BurgerButton {...args} />
 
-export const Burger = Template.bind({})
+export const Button = Template.bind({})
 
-Burger.args = {
-  onClick: action(burger => console.log(burger)),
+Button.args = {
+  onClick: action(open => console.log(open)),
   open: false,
 }

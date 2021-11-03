@@ -1,16 +1,16 @@
-import FlipCard from './FlipCard'
+import MapBox from './MapBox'
 import { action } from '@storybook/addon-actions'
 
 export default {
-  title: 'Component/FlipCard',
-  component: FlipCard,
+  title: 'Component/MapBox',
+  component: MapBox,
 }
 
-const Template = args => <FlipCard {...args} />
+const Template = args => <MapBox {...args} />
 
-export const Card = Template.bind({})
+export const Box = Template.bind({})
 
-Card.args = {
+Box.args = {
   onClickBookmark: action(bookmark => console.log(bookmark)),
   id: 1,
   name: 'Natur- und Tierpark Brüggen',
