@@ -1,38 +1,39 @@
+import useClickOutside from '../../hooks/useClickOutside'
 import styled, { css } from 'styled-components/macro'
 import { useState, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
-import useClickOutside from '../../hooks/useClickOutside'
 
 export default function SearchBox({ searchTerm, onChange }) {
   const [isToggled, setIsToggled] = useState(false)
+
   const node = useRef()
+
   const history = useHistory()
 
   useClickOutside(node, () => setIsToggled(false))
+
+  return (
+    <Form onSubmit={handleSubmit} ref={node}>
+      <label>
+        <ScreenReaderOnly>Search box</ScreenReaderOnly>
+        <Input
+          type="text"
+          name="input"
+          isToggled={isToggled}
+          value={searchTerm}
+          onChange={onChange}
+          placeholder="Search..."
+        />
+      </label>
+      <Button isToggled={isToggled} aria-label="Toggle search box" />
+    </Form>
+  )
 
   function handleSubmit(event) {
     event.preventDefault()
     setIsToggled(!isToggled)
     history.push('/list')
   }
-
-  return (
-    <div ref={node}>
-      <Form onSubmit={handleSubmit}>
-        <label>
-          <ScreenReaderOnly>Search box</ScreenReaderOnly>
-          <Input
-            type="text"
-            name="input"
-            isToggled={isToggled}
-            value={searchTerm}
-            onChange={onChange}
-          />
-        </label>
-        <Button isToggled={isToggled} aria-label="Toggle search box" />
-      </Form>
-    </div>
-  )
 }
 
 const Form = styled.form`

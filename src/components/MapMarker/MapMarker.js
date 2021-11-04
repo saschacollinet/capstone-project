@@ -19,10 +19,6 @@ export default function MapMarker({
 }) {
   const [showDetails, setShowDetails] = useState(false)
 
-  function openDetails() {
-    setShowDetails(showDetails ? false : true)
-  }
-
   return (
     <Wrapper>
       <img src={Marker} alt="location marker"></img>
@@ -74,6 +70,10 @@ export default function MapMarker({
       </MarkerArea>
     </Wrapper>
   )
+
+  function openDetails() {
+    setShowDetails(showDetails ? false : true)
+  }
 }
 
 const Wrapper = styled.div`

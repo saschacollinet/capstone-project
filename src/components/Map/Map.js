@@ -1,6 +1,6 @@
+import MapMarker from '../MapMarker/MapMarker'
 import GoogleMapReact from 'google-map-react'
 import styled from 'styled-components/macro'
-import MapMarker from '../MapMarker/MapMarker'
 
 export default function Map({ activities, coords, onClickBookmark }) {
   return (

@@ -1,6 +1,6 @@
+import CreateActivityForm from './CreateActivityForm'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import CreateActivityForm from './CreateActivityForm'
 import { createMemoryHistory } from 'history'
 import { Router } from 'react-router-dom'
 
@@ -68,7 +68,9 @@ describe('CreateActivityForm', () => {
 
   it('works: text written into the input fields will be sent to the onCreateNewActivity function', () => {
     const mockOnCreateNewActivity = jest.fn()
+
     const history = createMemoryHistory()
+
     render(
       <Router history={history}>
         <CreateActivityForm onCreateNewActivity={mockOnCreateNewActivity} />

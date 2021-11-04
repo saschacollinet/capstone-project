@@ -2,10 +2,10 @@ import BurgerButton from '../BurgerButton/BurgerButton'
 import BurgerMenu from '../BurgerMenu/BurgerMenu'
 import SearchBox from '../SearchBox/SearchBox'
 import logo from '../../assets/images/logo.svg'
+import useClickOutside from '../../hooks/useClickOutside'
 import styled from 'styled-components/macro'
 import { useState, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
-import useClickOutside from '../../hooks/useClickOutside'
 
 export default function Header({ searchTerm, onChange }) {
   const [open, setOpen] = useState(false)

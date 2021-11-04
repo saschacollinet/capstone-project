@@ -6,7 +6,6 @@ describe('ErrorMessage', () => {
     render(<ErrorMessage />)
 
     const headings = screen.getAllByRole('heading')
-
     expect(headings).toHaveLength(2)
   })
 

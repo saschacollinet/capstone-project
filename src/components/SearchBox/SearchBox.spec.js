@@ -1,7 +1,7 @@
-import { render, screen } from '@testing-library/react'
-import { BrowserRouter as Router } from 'react-router-dom'
-import userEvent from '@testing-library/user-event'
 import SearchBox from './SearchBox'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 
 describe('SearchBox', () => {
   const mockOnChange = jest.fn()
