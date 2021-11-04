@@ -2,7 +2,7 @@ import styled from 'styled-components/macro'
 
 export default function BurgerButton({ open, onClick }) {
   return (
-    <Button open={open} onClick={onClick}>
+    <Button open={open} onClick={onClick} aria-label="Toggle menu">
       <div />
       <div />
       <div />

@@ -4,6 +4,7 @@ import Footer from '../footer/Footer'
 import Home from '../home/Home'
 import ActivitiesList from '../ActivitiesList/ActivitiesList'
 import CreateActivityForm from '../createActivityForm/CreateActivityForm'
+import Map from '../Map/Map'
 import loadFromLocal from '../../lib/loadFromLocal'
 import saveToLocal from '../../lib/saveToLocal'
 import filterActivities from '../../utils/filterActivities'
@@ -20,6 +21,8 @@ export default function App({ initialActivities }) {
 
   const [searchTerm, setSearchTerm] = useState('')
 
+  const [coords, setCoords] = useState({})
+
   const location = useLocation()
 
   useEffect(() => {
@@ -31,6 +34,14 @@ export default function App({ initialActivities }) {
   useEffect(() => {
     saveToLocal('localActivities', activities)
   }, [activities])
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      ({ coords: { latitude, longitude } }) => {
+        setCoords({ lat: latitude, lng: longitude })
+      }
+    )
+  }, [])
 
   const filteredActivities =
     filterActivities(activities, searchTerm) || activities
@@ -68,6 +79,13 @@ export default function App({ initialActivities }) {
             <Route exact path="/create">
               <CreateActivityForm
                 onCreateNewActivity={handleCreateNewActivity}
+              />
+            </Route>
+            <Route exact path="/map">
+              <Map
+                activities={activities}
+                coords={coords}
+                onClickBookmark={handleBookmark}
               />
             </Route>
           </Switch>

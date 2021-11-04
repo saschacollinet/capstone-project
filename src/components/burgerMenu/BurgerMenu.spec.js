@@ -11,7 +11,7 @@ describe('BurgerMenu', () => {
     )
 
     const navLinks = screen.getAllByRole('link')
-    expect(navLinks).toHaveLength(4)
+    expect(navLinks).toHaveLength(5)
   })
 
   it('displays the text', () => {

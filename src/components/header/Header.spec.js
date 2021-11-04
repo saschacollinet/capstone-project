@@ -11,7 +11,7 @@ describe('Header', () => {
     )
 
     const links = screen.getAllByRole('link')
-    expect(links).toHaveLength(5)
+    expect(links).toHaveLength(6)
 
     const logo = screen.getByAltText('Allaround Family')
     expect(logo).toBeInTheDocument()
