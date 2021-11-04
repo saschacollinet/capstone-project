@@ -1,5 +1,5 @@
 import ErrorMessage from '../ErrorMessage/ErrorMessage'
-import FlipCard from '../AflipCard/FlipCard'
+import FlipCard from '../FlipCard/FlipCard'
 
 export default function ActivitiesList({ activities, onClickBookmark }) {
   if (!activities.length) {

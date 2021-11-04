@@ -1,4 +1,4 @@
-import BookmarkButton from '../AbookmarkButton/BookmarkButton'
+import BookmarkButton from '../BookmarkButton/BookmarkButton'
 import Marker from '../../assets/images/map-marker-outline.svg'
 import styled, { css } from 'styled-components/macro'
 import { useState } from 'react'

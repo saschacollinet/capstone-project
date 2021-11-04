@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components/macro'
 import { useState } from 'react'
 import mainBackground from '../../assets/images/mainBackground.jpg'
-import BookmarkButton from '../AbookmarkButton/BookmarkButton'
+import BookmarkButton from '../BookmarkButton/BookmarkButton'
 
 export default function FlipCard({
   id,

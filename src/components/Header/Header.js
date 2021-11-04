@@ -1,6 +1,6 @@
 import BurgerButton from '../AburgerButton/BurgerButton'
 import BurgerMenu from '../AburgerMenu/BurgerMenu'
-import SearchBox from '../AsearchBox/SearchBox'
+import SearchBox from '../SearchBox/SearchBox'
 import logo from '../../assets/images/logo.svg'
 import styled from 'styled-components/macro'
 import { useState, useRef } from 'react'
