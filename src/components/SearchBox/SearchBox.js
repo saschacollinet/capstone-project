@@ -65,6 +65,7 @@ const Input = styled.input`
   -webkit-transform: translate(-100%, -50%);
   -ms-transform: translate(-100%, -50%);
   transform: translate(-100%, -50%);
+
   ${({ isToggled }) =>
     isToggled &&
     css`
@@ -108,6 +109,7 @@ const Button = styled.button`
   -webkit-transform: translate(-100%, -50%);
   -ms-transform: translate(-100%, -50%);
   transform: translate(-100%, -50%);
+
   &::before {
     content: '';
     position: absolute;
@@ -123,6 +125,7 @@ const Button = styled.button`
     -webkit-transition: 0.2s ease-in-out;
     transition: 0.2s ease-in-out;
   }
+
   ${({ isToggled }) =>
     isToggled &&
     css`
@@ -130,6 +133,7 @@ const Button = styled.button`
       transition: 0.4s ease-in-out;
       -webkit-transition-delay: 0.4s;
       transition-delay: 0.4s;
+
       &::before {
         content: '';
         position: absolute;
@@ -145,6 +149,7 @@ const Button = styled.button`
         -webkit-transition: 0.2s ease-in-out;
         transition: 0.2s ease-in-out;
       }
+
       &::after {
         content: '';
         position: absolute;
