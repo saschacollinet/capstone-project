@@ -47,7 +47,7 @@ Bookmark favorite activities, or the once you want to try in the future and quic
 
 - clone Project
 - run `npm i` to install all necessary dependencies
-- add .env file with a working Google Maps API key, to make the map work properly
+- add `.env` file with a working Google Maps API key, to make the map work properly
 - run `npm start` to run the project locally
 - press `control + c` inside the terminal to stop the localhost
 
