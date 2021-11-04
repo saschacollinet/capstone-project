@@ -43,6 +43,14 @@ export default function CreateActivityForm({ onCreateNewActivity }) {
         <input type="text" name="country" required autoComplete="Off" />
       </Label>
       <Label>
+        Latitude:
+        <input type="text" name="latitude" required autoComplete="Off" />
+      </Label>
+      <Label>
+        Longitude:
+        <input type="text" name="longitude" required autoComplete="Off" />
+      </Label>
+      <Label>
         Opening Hours:
         <input type="text" name="openingHours" required autoComplete="Off" />
       </Label>
@@ -79,6 +87,8 @@ export default function CreateActivityForm({ onCreateNewActivity }) {
       zipCode,
       city,
       country,
+      latitude,
+      longitude,
       openingHours,
       website,
       isFreeOfCharge,
@@ -92,6 +102,8 @@ export default function CreateActivityForm({ onCreateNewActivity }) {
       city: city.value,
       zipCode: zipCode.value,
       country: country.value,
+      lat: latitude.value,
+      lng: longitude.value,
       openingHours: openingHours.value,
       website: website.value,
       isFreeOfCharge: JSON.parse(isFreeOfCharge.value),

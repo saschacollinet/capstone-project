@@ -3,8 +3,6 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
 describe('BookmarkButton', () => {
-  const mockOnClickBookmark = jest.fn()
-
   it('renders', () => {
     render(<BookmarkButton />)
 
@@ -13,6 +11,8 @@ describe('BookmarkButton', () => {
   })
 
   it('calls a function when the user clicks the button', () => {
+    const mockOnClickBookmark = jest.fn()
+
     render(<BookmarkButton onClickBookmark={mockOnClickBookmark} />)
 
     const button = screen.getByRole('button')

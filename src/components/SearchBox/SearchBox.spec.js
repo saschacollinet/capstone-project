@@ -1,11 +1,9 @@
-import { render, screen } from '@testing-library/react'
-import { BrowserRouter as Router } from 'react-router-dom'
-import userEvent from '@testing-library/user-event'
 import SearchBox from './SearchBox'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 
 describe('SearchBox', () => {
-  const mockOnChange = jest.fn()
-
   it('renders', () => {
     render(
       <Router>
@@ -21,6 +19,8 @@ describe('SearchBox', () => {
   })
 
   it('calls a function when the user types something in the search field and the input value changes', () => {
+    const mockOnChange = jest.fn()
+
     render(
       <Router>
         <SearchBox onChange={mockOnChange} />

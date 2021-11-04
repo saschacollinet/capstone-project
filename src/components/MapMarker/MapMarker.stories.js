@@ -1,16 +1,16 @@
-import MapBox from './MapBox'
+import MapMarker from './MapMarker'
 import { action } from '@storybook/addon-actions'
 
 export default {
-  title: 'Component/MapBox',
-  component: MapBox,
+  title: 'Component/MapMarker',
+  component: MapMarker,
 }
 
-const Template = args => <MapBox {...args} />
+const Template = args => <MapMarker {...args} />
 
-export const Box = Template.bind({})
+export const Marker = Template.bind({})
 
-Box.args = {
+Marker.args = {
   onClickBookmark: action(bookmark => console.log(bookmark)),
   id: 1,
   name: 'Natur- und Tierpark Brüggen',

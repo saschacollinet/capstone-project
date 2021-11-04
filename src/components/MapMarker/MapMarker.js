@@ -1,9 +1,9 @@
-import BookmarkButton from '../bookmarkButton/BookmarkButton'
+import BookmarkButton from '../BookmarkButton/BookmarkButton'
 import Marker from '../../assets/images/map-marker-outline.svg'
 import styled, { css } from 'styled-components/macro'
 import { useState } from 'react'
 
-export default function MapBox({
+export default function MapMarker({
   id,
   name,
   description,
@@ -18,10 +18,6 @@ export default function MapBox({
   onClickBookmark,
 }) {
   const [showDetails, setShowDetails] = useState(false)
-
-  function openDetails() {
-    setShowDetails(showDetails ? false : true)
-  }
 
   return (
     <Wrapper>
@@ -74,6 +70,10 @@ export default function MapBox({
       </MarkerArea>
     </Wrapper>
   )
+
+  function openDetails() {
+    setShowDetails(showDetails ? false : true)
+  }
 }
 
 const Wrapper = styled.div`

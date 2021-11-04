@@ -1,10 +1,11 @@
 import ErrorMessage from '../ErrorMessage/ErrorMessage'
-import FlipCard from '../flipCard/FlipCard'
+import FlipCard from '../FlipCard/FlipCard'
 
 export default function ActivitiesList({ activities, onClickBookmark }) {
   if (!activities.length) {
     return <ErrorMessage />
   }
+
   return activities.map(activity => (
     <FlipCard
       id={activity.id}

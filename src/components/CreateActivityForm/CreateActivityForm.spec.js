@@ -1,6 +1,6 @@
+import CreateActivityForm from './CreateActivityForm'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import CreateActivityForm from './CreateActivityForm'
 import { createMemoryHistory } from 'history'
 import { Router } from 'react-router-dom'
 
@@ -27,6 +27,12 @@ describe('CreateActivityForm', () => {
 
     const inputElCountry = screen.getByLabelText('Country:')
     expect(inputElCountry).toBeRequired()
+
+    const inputElLatitude = screen.getByLabelText('Latitude:')
+    expect(inputElLatitude).toBeRequired()
+
+    const inputElLongitude = screen.getByLabelText('Longitude:')
+    expect(inputElLongitude).toBeRequired()
 
     const inputElOpeningHours = screen.getByLabelText('Opening Hours:')
     expect(inputElOpeningHours).toBeRequired()
@@ -68,7 +74,9 @@ describe('CreateActivityForm', () => {
 
   it('works: text written into the input fields will be sent to the onCreateNewActivity function', () => {
     const mockOnCreateNewActivity = jest.fn()
+
     const history = createMemoryHistory()
+
     render(
       <Router history={history}>
         <CreateActivityForm onCreateNewActivity={mockOnCreateNewActivity} />
@@ -98,6 +106,12 @@ describe('CreateActivityForm', () => {
     const inputCountry = screen.getByLabelText('Country:')
     userEvent.type(inputCountry, 'Germany')
 
+    const inputLatitude = screen.getByLabelText('Latitude:')
+    userEvent.type(inputLatitude, '51.25667175577751')
+
+    const inputLongitude = screen.getByLabelText('Longitude:')
+    userEvent.type(inputLongitude, '6.750102542689271')
+
     const inputOpeningHours = screen.getByLabelText('Opening Hours:')
     userEvent.type(inputOpeningHours, '10:00 - 18:00')
 
@@ -119,6 +133,8 @@ describe('CreateActivityForm', () => {
       city: 'Düsseldorf',
       zipCode: '40474',
       country: 'Germany',
+      lat: '51.25667175577751',
+      lng: '6.750102542689271',
       openingHours: '10:00 - 18:00',
       website: 'https://www.duesseldorf.de/aquazoo.html',
       isFreeOfCharge: true,

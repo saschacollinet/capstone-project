@@ -1,9 +1,9 @@
+import App from './components/App/App'
+import data from './data.json'
+import GlobalStyles from './GlobalStyles'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './components/app/App'
-import GlobalStyles from './GlobalStyles'
 import reportWebVitals from './reportWebVitals'
-import data from './data.json'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 ReactDOM.render(
