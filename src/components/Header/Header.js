@@ -1,5 +1,5 @@
-import BurgerButton from '../AburgerButton/BurgerButton'
-import BurgerMenu from '../AburgerMenu/BurgerMenu'
+import BurgerButton from '../BurgerButton/BurgerButton'
+import BurgerMenu from '../BurgerMenu/BurgerMenu'
 import SearchBox from '../SearchBox/SearchBox'
 import logo from '../../assets/images/logo.svg'
 import styled from 'styled-components/macro'
