@@ -1,6 +1,6 @@
 import GoogleMapReact from 'google-map-react'
 import styled from 'styled-components/macro'
-import MapBox from '../MapBox/MapBox'
+import MapMarker from '../MapMarker/MapMarker'
 
 export default function Map({ activities, coords, onClickBookmark }) {
   return (
@@ -16,7 +16,7 @@ export default function Map({ activities, coords, onClickBookmark }) {
         onChildClick={''}
       >
         {activities.map(activity => (
-          <MapBox
+          <MapMarker
             id={activity.id}
             name={activity.name}
             description={activity.description}

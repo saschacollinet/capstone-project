@@ -1,9 +1,9 @@
-import BookmarkButton from '../bookmarkButton/BookmarkButton'
+import BookmarkButton from '../AbookmarkButton/BookmarkButton'
 import Marker from '../../assets/images/map-marker-outline.svg'
 import styled, { css } from 'styled-components/macro'
 import { useState } from 'react'
 
-export default function MapBox({
+export default function MapMarker({
   id,
   name,
   description,
