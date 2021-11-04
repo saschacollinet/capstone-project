@@ -7,7 +7,7 @@ export default function BookmarkButton({ id, isBookmarked, onClickBookmark }) {
     <Button
       isBookmarked={isBookmarked}
       onClick={event => onClickBookmark(event, id)}
-      aria-label="Toogle bookmark"
+      aria-label="Toggle bookmark"
     />
   )
 }
