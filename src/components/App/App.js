@@ -5,6 +5,7 @@ import Home from '../Home/Home'
 import ActivitiesList from '../ActivitiesList/ActivitiesList'
 import CreateActivityForm from '../CreateActivityForm/CreateActivityForm'
 import Map from '../Map/Map'
+import TheFish from '../TheFish/TheFish'
 import loadFromLocal from '../../lib/loadFromLocal'
 import saveToLocal from '../../lib/saveToLocal'
 import filterActivities from '../../utils/filterActivities'
@@ -87,6 +88,9 @@ export default function App({ initialActivities }) {
                 coords={coords}
                 onClickBookmark={handleBookmark}
               />
+            </Route>
+            <Route exact path="/fish">
+              <TheFish />
             </Route>
           </Switch>
         </Main>
