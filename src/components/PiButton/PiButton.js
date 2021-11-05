@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 export default function PiButton() {
   return (
     <NavLink to="/fish">
-      <Button />
+      <Button aria-label="Toggle the fish" />
     </NavLink>
   )
 }
