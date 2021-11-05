@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import PiButton from '../PiButton/PiButton'
 
 export default function Footer() {
   return (
@@ -37,6 +38,7 @@ export default function Footer() {
           </li>
         </ProfilesList>
       </Profiles>
+      <PiButton />
     </Wrapper>
   )
 }
