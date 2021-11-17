@@ -7,7 +7,7 @@ describe('BookmarkButton', () => {
     render(<BookmarkButton />)
 
     const button = screen.getByRole('button')
-    expect(button).toBeInTheDocument
+    expect(button).toBeInTheDocument()
   })
 
   it('calls a function when the user clicks the button', () => {
