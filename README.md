@@ -37,7 +37,6 @@ Bookmark favorite activities, or the once you want to try in the future and quic
 `React-Testing-Library`,
 `Storybook`,
 `Vercel`,
-`Node.js`,
 `npm`,
 `Git Workflow`,
 `Figma`,
